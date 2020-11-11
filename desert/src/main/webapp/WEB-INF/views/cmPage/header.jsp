@@ -4,6 +4,7 @@
 <!DOCTYPE html>
 <html>
 <head>
+    <link rel="stylesheet" href="/css/bootstrap.css">
 <script type="text/javascript" src="http://code.jquery.com/jquery-latest.js"></script>
 <!--===============================================================================================-->
 <!-- 최현석 -->
@@ -67,24 +68,13 @@
 
 <link rel="stylesheet" href="<c:url value='/common/css/common.css'/>" >
 <!--===============================================================================================-->
-    <!-- 부트스트랩 CSS URL링크 -->
-<link rel="stylesheet"
-href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css"
-integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2"
-crossorigin="anonymous">
 
-<!-- 부트스트랩 JS URL링크 -->
-<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
-integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
-crossorigin="anonymous"></script>
-<script
-src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js"
-integrity="sha384-ho+j7jyWK8fNQe+A12Hb8AhRq26LrZ/JpcUGGOn+Y7RsweNrtN/tE3MoK7ZeZDyx"
-crossorigin="anonymous"></script>
+
 </head>
 
 <body>
 <!-- 상단 메뉴 : 최현석-->
+<div>
 <ul class="nav nav-pills" style="float: right; margin-right: 50px;">
 	<li role="presentation" style="margin-left: 25px; color: black;"><a href="#">회원가입</a></li>
 	<li role="presentation" style="margin-left: 25px; color: black;"><a href="#">로그인</a></li>
@@ -97,34 +87,32 @@ crossorigin="anonymous"></script>
 			  <path d="M7 6.5C7 7.328 6.552 8 6 8s-1-.672-1-1.5S5.448 5 6 5s1 .672 1 1.5z"/>
 			  <path fill-rule="evenodd" d="M8.757 6.063a.5.5 0 0 1 .68.194.934.934 0 0 0 .813.493c.339 0 .645-.19.813-.493a.5.5 0 1 1 .874.486A1.934 1.934 0 0 1 10.25 7.75c-.73 0-1.356-.412-1.687-1.007a.5.5 0 0 1 .194-.68z"/>
 			</svg>
-		  
 			고객센터 <span class="caret" ></span>
 		  </a>
 		  <ul class="dropdown-menu" role="menu" href="#">
 				<li>
-					<a href="#" style="margin-left: 10px; color: black;">공지사항</a>
+					<a href="#" style="color: black;">공지사항</a>
 				</li>
 				<li>
-					<a href="#" style="margin-left: 10px; color: black;">자주하는 질문</a>
+					<a href="#" style="margin-left: 10px; color: black;">이벤트</a>
 				</li>
 				<li>
-					<a href="#" style="margin-left: 10px; color: black;">상품문의</a>
+					<a href="#" style="margin-left: 10px; color: black;">회사 소개</a>
 				</li>
 				<li>
-					<a href="#" style="margin-left: 10px; color: black;">아이디 찾기</a>
+					<a href="#" style="margin-left: 10px; color: black;">1:1 문의하기</a>
 				</li>
-				<li>
-					<a href="#" style="margin-left: 10px; color: black;">비밀번호 찾기</a>
-				</li>
+
 		  </ul>
 	  </ul>
   </ul>
+  </div>
 <!-- 상단 메뉴 끝 -->
 <!--===============================================================================================-->
 <!-- 탑 배너 로고 : 최현석 -->
 <br>
 <div class="logo" >
-	<img src="/img/toplogo.png" alt="logo" style="display:block; margin: 0 auto; width:350px; height:150px;">
+	<img src="/img/toplogo.png" alt="logo" style="display:block; margin:0 auto; width:350px; height:150px;">
 </div>
 <!-- 탑 배너 로고 끝 -->
 <!--===============================================================================================-->
@@ -137,12 +125,12 @@ crossorigin="anonymous"></script>
 	
 </button>
 
-  <div class="collapse navbar-collapse" id="navbarsExample03">
+  <div class="collapse navbar-collapse" id="navbarsExample03" style="display: block; ">
 	<ul class="navbar-nav mr-auto">
 		<li class="nav-item dropdown">
 			<a class="nav-link dropdown-toggle" href="#" id="dropdown03" 
 			data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" 
-			style="color:white";>전체 카테고리</a>
+			style="color:white; ">전체 카테고리</a>
 			<div class="dropdown-menu" aria-labelledby="dropdown03">
 			  <a class="dropdown-item" href="#">빵(Bread)</a>
 			  <a class="dropdown-item" href="#">쿠키(Cookie)</a>
@@ -152,22 +140,22 @@ crossorigin="anonymous"></script>
 			  <a class="dropdown-item" href="#">기타(ECT)</a>
 			</div>
 		  </li>
-	  <li class="nav-item active" style="margin-left: 50px;">
+	  <li class="nav-item active" style="display:block; margin-left : 100px; ">
 		<a class="nav-link" href="#" style="color:white"> 신상품 </a>
 	  </li>
-	  <li class="nav-item active" style="margin-left: 50px;">
+	  <li class="nav-item active" style="display:block; margin-left : 100px; ">
 		<a class="nav-link" href="#" style="color:white"> 베스트 </a>
 	  </li>
-	  <li class="nav-item active" style="margin-left: 50px;">
+	  <li class="nav-item active" style="display:block; margin-left : 100px; ">
 		<a class="nav-link" href="#" style="color:white"> 이벤트 </a>
 	  </li>
-	  	<li class="nav-item icon" style="margin-left:50px;">
+	  	<li class="nav-item icon" style="display:block; margin-left : 100px; ">
 	  		    <!-- 장바구니 아이콘 -->
 		<svg width="35px" height="35px" color="white" viewBox="0 0 16 16" class="bi bi-cart4" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
 		  <path fill-rule="evenodd" d="M0 2.5A.5.5 0 0 1 .5 2H2a.5.5 0 0 1 .485.379L2.89 4H14.5a.5.5 0 0 1 .485.621l-1.5 6A.5.5 0 0 1 13 11H4a.5.5 0 0 1-.485-.379L1.61 3H.5a.5.5 0 0 1-.5-.5zM3.14 5l.5 2H5V5H3.14zM6 5v2h2V5H6zm3 0v2h2V5H9zm3 0v2h1.36l.5-2H12zm1.11 3H12v2h.61l.5-2zM11 8H9v2h2V8zM8 8H6v2h2V8zM5 8H3.89l.5 2H5V8zm0 5a1 1 0 1 0 0 2 1 1 0 0 0 0-2zm-2 1a2 2 0 1 1 4 0 2 2 0 0 1-4 0zm9-1a1 1 0 1 0 0 2 1 1 0 0 0 0-2zm-2 1a2 2 0 1 1 4 0 2 2 0 0 1-4 0z"/>
 		</svg>
 	  	</li>
-	  <li class="nav-item active" style="margin-left: 10px;">
+	  <li class="nav-item active" style="display:block; margin-left : 20px; ">
 		<a class="nav-link" href="#" style="color:white"> 장바구니 </a>
 	  </li>
 
