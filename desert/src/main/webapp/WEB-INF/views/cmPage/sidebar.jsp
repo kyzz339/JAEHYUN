@@ -9,7 +9,7 @@
 <body>
   <!-- ================================================================================================ -->
      <!-- 사이드바 시작 -->
-  <div class="d-flex" id="wrapper" style= "padding=5px;">
+  <div class="d-flex" id="wrapper" style= "padding=5px; height : 800px;">
     <div class="bg-light border-right" id="sidebar-wrapper">
       <div class="sidebar-heading" style="text-align: center; margin : 50px;"> <h5><strong>My Page</strong></h5>  </div>
       <div class="list-group list-group-flush" id="sidebar">

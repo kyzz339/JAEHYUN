@@ -3,16 +3,28 @@
 <!DOCTYPE html>
 <html>
 <head>
-</head>
-<body><div>
-	<footer class="bs-docs-footer" role="contentinfo" style="background-color:#5BB9A8; color=white; text-align: center;">
-<br/>
  	<style>
- 	 .footer_sentence{
- 	 	margin : 20px;
- 	 	padding : 20px;
- 	 	}
+     footer {
+      position:absolute;
+
+	  width:100%;
+      background-color: #555;
+      color: white;
+		margin-top: 100px;
+		height : auto;
+      background-color:#5BB9A8; color=white; text-align: center;
+		left:0;
+}
+
+    }
+
  	</style>
+
+</head>
+<body>
+<div id="wrap">
+	<footer>
+<br/>
         <div>
         	<span class="footer_sentence" href="#"><h5>회사 소개</h5></span>
         	<br/>
@@ -39,6 +51,6 @@
        	</span>
         </div>
 	</footer>
- 	</div>
+</div>
 </body>
 </html>

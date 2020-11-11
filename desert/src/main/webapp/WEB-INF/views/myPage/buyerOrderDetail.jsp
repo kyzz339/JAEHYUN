@@ -108,6 +108,7 @@
         </tr>
     </table>
 <!-- 푸터 -->
+
 <jsp:include page="/footer"></jsp:include>
 </body>
 </html>
