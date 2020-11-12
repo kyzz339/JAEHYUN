@@ -26,7 +26,7 @@
 	<footer>
 <br/>
         <div>
-        	<span class="footer_sentence" href="#"><h5>회사 소개</h5></span>
+        	<span class="footer_sentence" ><a href="/cmIntroCompany"><h5>회사 소개</h5></a></span>
         	<br/>
         </div>
         <div>

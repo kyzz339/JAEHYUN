@@ -11,3 +11,4 @@ public interface ServiceCart {
 	public int totalAmount();
 
 }
+

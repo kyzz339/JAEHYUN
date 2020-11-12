@@ -86,23 +86,6 @@
 		    	}
 		    	document.getElementById('memberTypeBox').innerHTML=strMemberTypeBox;
 			}
-			//비동기 통신. >> jsp 떨어트리면 안댐. jsp 페이지가 아님.
-			function test1(){
-				$.ajax({
-					url:'/test2',
-					type:'post',
-					data:{
-						'choi'	:	num1,
-						'yoo'	:	num2
-					}
-					,success:function(data){
-						// 데이터가 객체로 떨어진다.
-						alert(data);
-						var result = data.choi; //Map 으로 받는다.
-						// console 로그로 객체 를 찍어서 디버깅ㅇ르 한다 .
-					}
-				})
-			}
 			</script>
    			</span>
    			 <span class="infoBox">

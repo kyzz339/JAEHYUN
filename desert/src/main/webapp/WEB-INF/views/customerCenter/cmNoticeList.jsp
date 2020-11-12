@@ -5,7 +5,7 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>프리미엄 디저트 마켓, 데저트</title>/title>
+<title>프리미엄 디저트 마켓, 데저트</title>
 <!--===============================================================================================-->
 <!-- 네비게이션 상단메뉴 -->
 <!-- ================================================================================================ -->
@@ -37,8 +37,10 @@ padding-bottom:10px;
 </head>
 <body>
 <div>
-<div class="solid">
-<img class="aside" alt="icon" src="leaf.png" border="10px" align="left" height="75px"><p>무엇을 도와드릴 까요?</p><p>궁금한 사항이나 불편한 사항은 저희 고객센터로 전화 주시거나 1:1 문의로 남겨주세요.<br>
+<div class="solid" style="background-color:#F2F2F2">
+<img class="aside" alt="icon" src="/img/customer_center.png" align="left" height="100px" style="margin : 10px" >
+<p>무엇을 도와드릴 까요?</p>
+<p>궁금한 사항이나 불편한 사항은 저희 고객센터로 전화 주시거나 1:1 문의로 남겨주세요.<br>
 <p>친절히 안내해 드립니다.</p> 
 </h3>
 </div>
