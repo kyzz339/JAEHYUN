@@ -19,7 +19,7 @@
       <!-- 사이드바 출력 구분 -->
  <script>
         var strSidebar = "";
-    	var memberType = "buyer"; /* DB연동 필요 */
+    	var memberType = "seller"; /* DB연동 필요 */
     	
   function sidebarConditional(){
         
