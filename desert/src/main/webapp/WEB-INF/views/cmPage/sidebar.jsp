@@ -32,22 +32,23 @@
     		strSidebar += '<a href="/adminEventManage" class="list-group-item list-group-item-action bg-light">이벤트 관리</a>';
     		strSidebar += '<a href="/adminQNAManage" class="list-group-item list-group-item-action bg-light">1:1 문의 답변</a>';
     		}
-    	else
+    	else if(memberType ==="buyer")
     	{
     		/* 구매자 사이드 바 */
     		 strSidebar += '<a href="/buyerOrderList" class="list-group-item list-group-item-action bg-light">주문 내역</a>';
              strSidebar += '<a href="/buyerPointList" class="list-group-item list-group-item-action bg-light">포인트 내역</a>';
              strSidebar += '<a href="/buyerCouponDetail" class="list-group-item list-group-item-action bg-light">쿠폰 조회</a>';
-             strSidebar += '<a href="/buyerMyPageModify" class="list-group-item list-group-item-action bg-light">정보 수정/탈퇴</a>';  // 판매자 or 구매자 판별해줘야함
+             strSidebar += '<a href="/buyerMyPageModify" class="list-group-item list-group-item-action bg-light">정보 수정/탈퇴</a>';
              strSidebar += '<a href="/buyerMyQuestionList" class="list-group-item list-group-item-action bg-light">1:1 문의하기</a>';
              strSidebar += '<a href="/buyerReviewList" class="list-group-item list-group-item-action bg-light">나의 리뷰 관리</a>';
     	}
-        if(memberType==="seller"){
+    	else if(memberType==="seller"){
         	/* 판매자 사이드 바 */
             strSidebar += '<a class="list-group-item list-group-item-action bg-#5BB9A8" style="background-color : #5BB9A8;color : white">판매자 메뉴</a>';
             strSidebar += '<a href="/sellerGoodsRegForm" class="list-group-item list-group-item-action bg-light">상품 등록</a>';
             strSidebar += '<a href="/sellerGoodsRegList" class="list-group-item list-group-item-action bg-light">내 상품 리스트</a>';
             strSidebar += '<a href="/sellerGoodsManage" class="list-group-item list-group-item-action bg-light">주문 관리</a>';
+            strSidebar += '<a href="/sellerMyPageModify" class="list-group-item list-group-item-action bg-light">정보 수정/탈퇴</a>'; 
             strSidebar += '<a href="/sellerGoodsDelivery" class="list-group-item list-group-item-action bg-light">판매 데이터 조회</a>';
             strSidebar += '<a href="/sellerQuestionList" class="list-group-item list-group-item-action bg-light">상품 1:1 문의 답변</a>';
         }       
