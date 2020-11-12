@@ -71,7 +71,7 @@
     	}
     </style>
     	   <span class="infoBox" id="memberTypeBox">
-			<!-- fuction memberTypeBox() -->
+			<!-- 권한에 따른 사이드바 수정 -->
 			<script>
 			function memberTypeBoxConditional(){
 		        var strMemberTypeBox = "";
@@ -83,18 +83,17 @@
 		    	else if(memberType==="seller"){
 		    		strMemberTypeBox = "<h3>판매자님 환영합니다.</h3>";
 		    	}else{
-		    		strMemberTypeBox = "";
+		    		strMemberTypeBox = '<span class="infoBox">'+
+		     						   '<h3>적립금 : 100원</h3>'+
+		    							'</span>'+
+		    			 				'<span class="infoBox">'+
+		     	  						'<h3>소유 쿠폰 : 2 개</h3>'+
+		    							'</span>';
 		    	}
 		    	document.getElementById('memberTypeBox').innerHTML=strMemberTypeBox;
 			}
 			</script>
-   			</span>
-   			 <span class="infoBox">
-    	   <h3>적립금 : 100원</h3>
-   			</span>
-   			 <span class="infoBox">
-    	  <h3>소유 쿠폰 : 2 개</h3>
-   			</span>
+		</span>
     </div>	
 		<br />
      <!-- ========================================= -->
