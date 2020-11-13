@@ -2,7 +2,7 @@ package com.desert.demo.mapper;
 
 import com.desert.demo.dto.DTOCart;
 
-public interface Cart {
+public interface CartMapper {
 	public int insertCart();
 	public int deleteCart();
 	public DTOCart getCartInfo();

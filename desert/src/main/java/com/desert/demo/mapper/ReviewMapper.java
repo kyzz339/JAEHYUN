@@ -4,7 +4,7 @@ import java.util.ArrayList;
 
 import com.desert.demo.dto.DTOReview;
 
-public interface Review {
+public interface ReviewMapper {
 	public int insertReview();
 	public int modifyReview();
 	public int deleteReview();

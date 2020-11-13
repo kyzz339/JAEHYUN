@@ -4,7 +4,7 @@ import java.util.ArrayList;
 
 import com.desert.demo.dto.DTONotice;
 
-public interface Notice {
+public interface NoticeMapper {
 	public int insertNotice();
 	public int deleteNotice();
 	public ArrayList<DTONotice> listNotice();

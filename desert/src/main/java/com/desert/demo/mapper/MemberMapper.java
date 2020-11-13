@@ -2,7 +2,7 @@ package com.desert.demo.mapper;
 
 import com.desert.demo.dto.DTOMember;
 
-public interface Member {
+public interface MemberMapper {
 	 public int insertMember();
 	 public DTOMember getUserInfo();
 	 public int deleteMember();
