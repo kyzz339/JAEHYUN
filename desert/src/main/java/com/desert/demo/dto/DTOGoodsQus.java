@@ -1,7 +1,6 @@
 package com.desert.demo.dto;
 
 import java.sql.Timestamp;
-import java.util.Date;
 
 import lombok.Data;
 
