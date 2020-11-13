@@ -1,6 +1,6 @@
 package com.desert.demo.dto;
 
-import java.util.Date;
+import java.sql.Timestamp;
 
 import lombok.Data;
 
@@ -9,7 +9,6 @@ public class DTONotice {
 	int index;
 	String title;
 	String contents;
-	Date date;
-	String weight;
-
+	Timestamp date;
+	String urgent;
 }
