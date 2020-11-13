@@ -4,7 +4,7 @@ import java.util.ArrayList;
 
 import com.desert.demo.dto.DTOPayment;
 
-public interface Payment {
+public interface PaymentMapper {
 	public int insertPayment();
 	public int deletePayment();
 	public DTOPayment getInfoPayment();

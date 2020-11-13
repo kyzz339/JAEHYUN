@@ -2,7 +2,7 @@ package com.desert.demo.mapper;
 
 import com.desert.demo.dto.DTOEvent;
 
-public interface Event {
+public interface EventMapper {
 	public int insertEvent();
 	public int deleteEvent();
 	public int modifyEvent();
