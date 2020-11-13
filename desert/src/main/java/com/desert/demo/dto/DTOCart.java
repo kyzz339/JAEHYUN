@@ -4,11 +4,9 @@ import lombok.Data;
 
 @Data
 public class DTOCart {
-	int cartIndex;
-	String memberId;
-	int goodsIndex;
-	int goodsAmount;
-	int totalDiscount;
-	int totalNetPrice;
-
+	
+    private int idx;  
+    private int member_idx;
+    private int goods_idx;
+    private int goods_amount;
 }
