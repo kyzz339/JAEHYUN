@@ -1,24 +1,30 @@
 package com.desert.demo.dto;
 
+import java.sql.Timestamp;
 import java.util.Date;
 
 import lombok.Data;
 
 @Data
 public class DTOMember {
-	int index;
-	String grade;//등급
-	String name;
-	String email;
-	String pw;
-	String id;
-	String phone;
-	String address;
-	String mCag;//멤버 카테고리
-	String busLisence;//사업자 등록번호
-	int totalPoint;
-	boolean noBlock;
-	int totalPriceAmount;
-	Date regDate;
+	private int idx;
+	private int type;
+	private String name;
+	private String id;
+	private String pw;
+	private String email;
+	private String phone;
+	private String address;
+	private String business_license;
+	private String do_block;
+	private int total_goods_idx;
+	private int total_amount;
+	private Timestamp regdate;
+	private int total_point;
+	private int coupon_idx;
+	private String grade;
+	private int buy_goods_idx;
+	private int verifi_code;
+	private String do_promotion;
 
 }
