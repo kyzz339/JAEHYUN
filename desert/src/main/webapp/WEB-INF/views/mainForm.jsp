@@ -5,7 +5,7 @@
     System.out.println("contentPage:"+contentPage);
 
     if(contentPage==null)
-        contentPage="CmMain.jsp";
+        contentPage="cmMain.jsp";
 %>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions" %>
