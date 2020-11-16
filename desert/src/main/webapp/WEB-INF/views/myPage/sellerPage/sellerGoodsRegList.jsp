@@ -4,8 +4,6 @@
 <!DOCTYPE html>
 <html>
 <head>
-<jsp:include page="/header"></jsp:include>
-<jsp:include page="/sidebar"></jsp:include>
 
 <style type="text/css">
 h3 {
@@ -76,6 +74,6 @@ h3 {
 	</table>
 	<hr>
 	<!-- 여기까지 반복 -->
-<jsp:include page="/footer"></jsp:include>
+
 </body>
 </html>

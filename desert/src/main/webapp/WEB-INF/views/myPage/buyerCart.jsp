@@ -26,7 +26,7 @@
         </div>
 
         <div style="display: inline-block; width: 22.5%; margin: 0;">
-            <img src="http://placehold.it/120x150">
+            <img src="img/imgDK/img_name1.jpg">
         </div>
 
         <div style="display: inline-block; width:22.5%; margin: 0;">
@@ -57,7 +57,7 @@
         </div>
 
         <div style="display: inline-block; width: 22.5%; margin: 0;">
-            <img src="http://placehold.it/120x150">
+            <img src="img/imgDK/img_name2.jpg">
         </div>
 
         <div style="display: inline-block; width:22.5%; margin: 0;">
