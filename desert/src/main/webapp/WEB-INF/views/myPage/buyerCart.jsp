@@ -38,7 +38,7 @@
         </div>
 
         <div style="display: inline-block; width:22.5%; margin: 0;">
-            <!--  max값은 추후 ${~~.goodsstock}으로 바꿔야함 -->
+            <!--  max값은 추후 {~~.goodsstock}으로 바꿔야함 -->
 
             <button type="button" class="plus" style="border: none;background: none">+</button>
             <input type="number" class="numBox" min="1" max="100" value="1" readonly="readonly" style="text-align:center"/>
@@ -67,7 +67,7 @@
         </div>
 
         <div style="display: inline-block; width:22.5%; margin: 0;">
-            <!--  max값은 추후 ${~~.goodsstock}으로 바꿔야함 -->
+            <!--  max값은 추후 {~~.goodsstock}으로 바꿔야함 -->
 
             <button type="button" class="plus" style="border: none;background: none">+</button>
             <input type="number" class="numBox" min="1" max="100" value="1" readonly="readonly" style="text-align:center"/>
@@ -214,8 +214,10 @@
     function change(num) {
         var x = document.form;
         var y = Number(count.value) + num;
-        if (y < 1)y = 1;
-        x.count.value = y;
+        
+        if (y < 1) y = 1;
+        	x.count.value = y;
+        
     }
 </script>
 </body>
