@@ -4,8 +4,6 @@
 <html>
 <head>
 
-<jsp:include page="/header"></jsp:include>
-
 <style type="text/css">
 
 .input-group-text {
@@ -26,7 +24,6 @@ form {
 
 </head>
 <body>
-	<jsp:include page="../../cmPage/sidebar.jsp"></jsp:include>
     <h3 style="text-align: center;">상품 등록</h3>
     <form>
         <table > <!-- 전체 윤곽-->
@@ -153,6 +150,5 @@ form {
         <button type="button" class="btn btn-outline-secondary" onclick="location.href= 'sellerRegList' ">등록</button>
         <button type="button" class="btn btn-outline-secondary">취소</button>
     </form>
-<jsp:include page="/footer"></jsp:include>
 </body>
 </html>
