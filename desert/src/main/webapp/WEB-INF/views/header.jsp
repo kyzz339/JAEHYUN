@@ -138,7 +138,7 @@
 <!-- 탑 배너 로고 : 최현석 -->
 <br>
 <div class="logo" >
-	<a href="/cmMain"><img src="/img/toplogo.png" alt="logo" style="display:block; margin:0 auto; width:350px; height:150px;"></a>
+	<a href="/cmMain"><img src="/img/toplogo.png" alt="logo" style="display:block; margin-left: 700px; width:350px; height:150px;"></a>
 </div>
 <!-- 탑 배너 로고 끝 -->
 <!--===============================================================================================-->

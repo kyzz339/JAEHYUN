@@ -3,13 +3,8 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8"/>    <title>프리미엄 디저트 마켓 : 데저트</title>
-    <!--===============================================================================================-->
-    <!-- 네비게이션 상단메뉴 -->
-    <!-- ================================================================================================ -->
-    <jsp:include page="/header"></jsp:include>
-    <!-- ================================================================================================ -->
- </head>
+    <meta charset="UTF-8"/>   
+     </head>
   <body>
 <div style="width: 70%;margin: auto;margin-bottom: 60px">
 <div class="card-deck" style="margin: 20px">
@@ -130,8 +125,5 @@
         </li>
     </ul>
 </nav>
-
-<!-- 푸터 -->
-<jsp:include page="/footer"></jsp:include>
 </body>
 </html>
