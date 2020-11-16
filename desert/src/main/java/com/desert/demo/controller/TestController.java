@@ -7,10 +7,10 @@ import org.springframework.web.bind.annotation.RequestMethod;
 @Controller
 public class TestController {
 
-	@RequestMapping("/")
-	public String test() throws Exception{
-		return "/main/cmMain";
-	}
+//	@RequestMapping("/")
+//	public String test() throws Exception{
+//		return "/main/cmMain";
+//	}
 	
 	@RequestMapping("/0")
 	public String T0() throws Exception{
@@ -111,11 +111,11 @@ public class TestController {
 	public String T19() throws Exception{
 		return "/myPage/buyerMyQuestionList";
 	}
-	
-	@RequestMapping("/20")
-	public String T20() throws Exception{
-		return "/myPage/buyerMyReviewList";
-	}
+//	
+//	@RequestMapping("/20")
+//	public String T20() throws Exception{
+//		return "/myPage/buyerMyReviewList";
+//	}
 	
 	@RequestMapping("/21")
 	public String T21() throws Exception{
@@ -127,11 +127,11 @@ public class TestController {
 		return "/myPage/buyerOrderDetail";
 	}
 	
-	@RequestMapping("/23")
-	public String T23() throws Exception{
-		return "/myPage/buyerOrderForm";
-	}
-	
+//	@RequestMapping("/23")
+//	public String T23() throws Exception{
+//		return "/myPage/buyerOrderForm";
+//	}
+//	
 	@RequestMapping("/24")
 	public String T24() throws Exception{
 		return "/myPage/buyerOrderList";
