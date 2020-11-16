@@ -6,12 +6,6 @@
       layout:decorator="board/layout/basic" xmlns="http://www.w3.org/1999/html">
 <head>
     <meta charset="UTF-8"/>
-        <title>프리미엄 디저트 마켓 : 데저트</title>
-    <!--===============================================================================================-->
-    <!-- 네비게이션 상단메뉴 -->
-    <!-- ================================================================================================ -->
-    <jsp:include page="/header"></jsp:include>
-    <!-- ================================================================================================ -->
     <style>
         *{
             font-family: "나눔스퀘어라운드 Light";
@@ -154,9 +148,5 @@
 
 <script src="http://dmaps.daum.net/map_js_init/postcode.v2.js"></script>
 
-
-
-<!-- 푸터 -->
-<jsp:include page="/footer"></jsp:include>
 </body>
 </html>
