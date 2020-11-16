@@ -14,16 +14,16 @@ public class DTOMember {
 	private String email;
 	private String phone;
 	private String address;
-	private String business_license;
-	private String do_block;
-	private int total_goods_idx;
-	private int total_amount;
+	private String businessLicense;
+	private String doBlock;
+	private int totalGoodsIdx;
+	private int totalAmount;
 	private LocalDate regdate;
-	private int total_point;
-	private int coupon_idx;
+	private int totalPoint;
+	private int couponIdx;
 	private String grade;
-	private int buy_goods_idx;
-	private int verifi_code;
-	private String do_promotion;
+	private int buyGoodsIdx;
+	private int verifiCode;
+	private String doPromotion;
 
 }

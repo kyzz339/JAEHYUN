@@ -7,14 +7,14 @@ import lombok.Data;
 @Data
 public class DTOPerQus {
 
-	private int idx;
-	private LocalDate question_date;
+	private int index;
+	private LocalDate questionDate;
 	private String category;
 	private String reply;
-	private String member_id;
-	private String answer_contents;
-	private String question_contents;
-	private String question_title;
-	private LocalDate reply_date;
+	private String memberId;
+	private String answerContents;
+	private String questionContents;
+	private String questionTitle;
+	private LocalDate replyDate;
 
 }
