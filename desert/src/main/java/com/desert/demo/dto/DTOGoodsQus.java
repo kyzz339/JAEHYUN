@@ -5,17 +5,17 @@ import lombok.Data;
 
 @Data
 public class DTOGoodsQus {
-	private int idx;
-	private String dwriter_id; 
-	private int dgoods_idx; 
+	private int index;
+	private String writerId; 
+	private int goodsIndex; 
 	private String category;
 	private LocalDate regdate;
-	private String question_contents;
-	private String question_title;
-	private String seller_id;
-	private LocalDate reply_date;
-	private String answer_contents;
-	private String img_name;
-	private String img_url;
+	private String questionContents;
+	private String questionTitle;
+	private String sellerId;
+	private LocalDate replyDate;
+	private String answerContents;
+	private String imgName;
+	private String imgUrl;
 
 }

@@ -24,7 +24,7 @@
         </div>
 
         <div style="display: inline-block; width: 22.5%; margin: 0;">
-            <img src="http://placehold.it/120x150">
+            <img src="img/imgDK/img_name1.jpg">
         </div>
 
         <div style="display: inline-block; width:22.5%; margin: 0;">
@@ -36,7 +36,7 @@
         </div>
 
         <div style="display: inline-block; width:22.5%; margin: 0;">
-            <!--  max값은 추후 ${~~.goodsstock}으로 바꿔야함 -->
+            <!--  max값은 추후 {~~.goodsstock}으로 바꿔야함 -->
 
             <button type="button" class="plus" style="border: none;background: none">+</button>
             <input type="number" class="numBox" min="1" max="100" value="1" readonly="readonly" style="text-align:center"/>
@@ -65,7 +65,7 @@
         </div>
 
         <div style="display: inline-block; width:22.5%; margin: 0;">
-            <!--  max값은 추후 ${~~.goodsstock}으로 바꿔야함 -->
+            <!--  max값은 추후 {~~.goodsstock}으로 바꿔야함 -->
 
             <button type="button" class="plus" style="border: none;background: none">+</button>
             <input type="number" class="numBox" min="1" max="100" value="1" readonly="readonly" style="text-align:center"/>
@@ -217,6 +217,7 @@
     }
 </script>
 
+	<button type="button" onclick="location.href='buyerOrderForm'">주문하기</button>
 </body>
 
 </html>

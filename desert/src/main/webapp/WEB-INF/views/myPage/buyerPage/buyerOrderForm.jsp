@@ -41,7 +41,7 @@
     </div>
 
     <div class="center">
-        <form name="write_form_member" method="post">
+        <form action="buyerOrderComplete" method="post">
             <table style="border: 1px solid red; width:60%;height:100px;margin:auto; text-align: left;">
                     <tr>
                     <th>이름</th>
@@ -164,8 +164,6 @@
             </table>
         </div>
     </div>
-    
-
 
     <script src="https://t1.daumcdn.net/mapjsapi/bundle/postcode/prod/postcode.v2.js"></script>
 <script>

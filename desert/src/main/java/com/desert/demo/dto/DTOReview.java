@@ -6,13 +6,13 @@ import lombok.Data;
 @Data
 public class DTOReview {
 
-	private int idx;
-	private String writer_id;
+	private int index;
+	private String writerId;
 	private LocalDate date;
 	private String title;
 	private String contents;
 	private int hit;
-	private String img_name;
-	private String img_url;
+	private String imgName;
+	private String imgUrl;
 
 }

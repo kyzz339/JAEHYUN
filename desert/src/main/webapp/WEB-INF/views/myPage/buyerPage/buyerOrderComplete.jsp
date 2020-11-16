@@ -108,7 +108,7 @@
     </div>
 </div>
 <div class="center"> 
-    <button type="button" onclick="location.href='#'">주문내역/ 배송조회 확인</button>
+    <button type="button" onclick="location.href= 'buyerOrderList' ">주문내역/ 배송조회 확인</button>
     <button type="button" onclick="location.href='#'">쇼핑계속하기</button>
     <button type="button" onclick="location.href='#'">메인으로가기</button>
     <button type="button" onclick="location.href='#'">로그아웃</button>

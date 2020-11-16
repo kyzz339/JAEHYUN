@@ -5,22 +5,22 @@ import lombok.Data;
 
 @Data
 public class DTOGoods {
-	private int idx;
+	private int index;
 	private String category;
-	private int seller_idx; 
+	private int sellerIdx; 
 	private String name;
-	private int  net_price;
-	private String weight_unit; 
+	private int  netPrice;
+	private String weightUnit; 
 	private String contents; 
 	private int stock; 
-	private int discount_rate; 
-	private int final_price;
-	private String do_discount; 
+	private int discountRate; 
+	private int finalPrice;
+	private String doDiscount; 
 	private LocalDate regdate; 
 	private int hit;  
-	private int sales_amount; 
-	private int do_sale; 
-	private String img_name;
-	private String img_url; 
+	private int salesAmount; 
+	private int doSale; 
+	private String imgName;
+	private String imgUrl; 
 
 }
