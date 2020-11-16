@@ -1,14 +1,14 @@
 package com.desert.demo.dto;
 
-import java.sql.Timestamp;
+import java.time.LocalDate;
 
 import lombok.Data;
 
 @Data
 public class DTONotice {
-	int index;
-	String title;
-	String contents;
-	Timestamp date;
-	String urgent;
+	private int index;
+	private String title;
+	private String contents;
+	private LocalDate date;
+	private String urgent;
 }

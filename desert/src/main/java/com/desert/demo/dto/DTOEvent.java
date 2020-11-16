@@ -1,18 +1,16 @@
 package com.desert.demo.dto;
 
-
-
-import java.sql.Timestamp;
+import java.time.LocalDate;
 
 import lombok.Data;
 
 @Data
 public class DTOEvent {
-	int index;
-	String title;
-	Timestamp regdate;
-	String img_url;
-	String img_name;
+	private int index;
+	private String title;
+	private LocalDate regdate;
+	private String img_url;
+	private String img_name;
 	
 
 }

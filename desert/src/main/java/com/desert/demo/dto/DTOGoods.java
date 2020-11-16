@@ -1,27 +1,26 @@
 package com.desert.demo.dto;
 
-import java.sql.Timestamp;
-
+import java.time.LocalDate;
 import lombok.Data;
 
 @Data
 public class DTOGoods {
-	int idx;
-	String category;
-	int seller_idx; 
-    String name;
-    int  net_price;
-    String weight_unit; 
-    String contents; 
-    int stock; 
-    int discount_rate; 
-    int final_price;
-    String do_discount; 
-    Timestamp regdate; 
-    int hit;  
-    int sales_amount; 
-    int do_sale; 
-    String img_name;
-    String img_url; 
+	private int idx;
+	private String category;
+	private int seller_idx; 
+	private String name;
+	private int  net_price;
+	private String weight_unit; 
+	private String contents; 
+	private int stock; 
+	private int discount_rate; 
+	private int final_price;
+	private String do_discount; 
+	private LocalDate regdate; 
+	private int hit;  
+	private int sales_amount; 
+	private int do_sale; 
+	private String img_name;
+	private String img_url; 
 
 }

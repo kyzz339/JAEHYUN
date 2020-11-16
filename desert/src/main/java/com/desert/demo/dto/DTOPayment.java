@@ -3,7 +3,7 @@ package com.desert.demo.dto;
 import java.util.Date;
 
 import lombok.Data;
-
+//DB테이블에 없어서 수정하지 않음^^
 @Data
 public class DTOPayment {
 	int index;

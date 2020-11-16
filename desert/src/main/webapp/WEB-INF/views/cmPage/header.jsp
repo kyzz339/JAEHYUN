@@ -156,7 +156,7 @@
 		</svg>
 	  	</li>
 	  <li class="nav-item active" style="display:block; margin-left : 20px; ">
-		<a class="nav-link" href="#" style="color:white"> 장바구니 </a>
+		<a class="nav-link" href="buyerCart" style="color:white"> 장바구니 </a>
 	  </li>
 
 	</ul>

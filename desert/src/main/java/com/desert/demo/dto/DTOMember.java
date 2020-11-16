@@ -1,7 +1,6 @@
 package com.desert.demo.dto;
 
-import java.sql.Timestamp;
-import java.util.Date;
+import java.time.LocalDate;
 
 import lombok.Data;
 
@@ -19,7 +18,7 @@ public class DTOMember {
 	private String do_block;
 	private int total_goods_idx;
 	private int total_amount;
-	private Timestamp regdate;
+	private LocalDate regdate;
 	private int total_point;
 	private int coupon_idx;
 	private String grade;
