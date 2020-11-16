@@ -76,8 +76,34 @@
 <!-- 상단 메뉴 : 최현석-->
 <div>
 <ul class="nav nav-pills" style="float: right; margin-right: 50px;">
-	<li role="presentation" style="margin-left: 25px; color: black;"><a href="#">회원가입</a></li>
-	<li role="presentation" style="margin-left: 25px; color: black;"><a href="#">로그인</a></li>
+	<script>
+	   var strTopMenu = "";
+	   	var memberType = "0"; /* DB연동 필요 */
+	   	var memberName = ""; /* DB연동 필요 */
+	   	
+	   	function topMenuConditional(){
+	       
+	   	if(memberType==="로그인"){
+			/* 비로그인 시 */
+	   		strTopMenu += '	<li role="presentation" style="margin-left: 25px; color: black;"><a href="#">로그인</a></li>';
+	   		strTopMenu += '	<li role="presentation" style="margin-left: 25px; color: black;"><a href="#">회원가입</a></li>';
+		}
+	   	else if(memberType ==="관리자")
+	   	{
+	   		/* 관리자 로그인 */
+	   		strTopMenu += '<li role="presentation" style="margin-left: 25px; color: black;"><a href="#">관리자님 환영합니다.</a></li>';
+	   	}
+		else if(memberType ==="판매자")
+	   	{
+	   		/* 판매자 로그인 */
+	   		strTopMenu += '<li role="presentation" style="margin-left: 25px; color: black;"><a href="#">'+memberName+'님 환영합니다.</a></li>';
+	   	}
+		else if(memberType ==="구매자")
+	   	{
+	   		/* 구매자 로그인 */
+	   		 strTopMenu += '<li role="presentation" style="margin-left: 25px; color: black;"><a href="#">'+memberName+'님 환영합니다.</a></li>';
+	   	}
+	</script>
 	<li role="presentation" class="dropdown">
 		  <a class="dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-expanded="false" style="margin-left: 25px; color: black;">
 		 	 <!-- 윙크 아이콘 -->
@@ -165,6 +191,11 @@
 	</form>
   </div>
 </nav>
+<script>
+     window.onload=function(){
+ 		    topMenuConditional();
+ 	 };
+ 	 </script>
 </body>
 <!-- 네비게이션 코드 끝 -->
 <!--===============================================================================================-->
