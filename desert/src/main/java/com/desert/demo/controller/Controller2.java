@@ -1,12 +1,26 @@
 package com.desert.demo.controller;
 
+import java.util.ArrayList;
+
+import javax.servlet.http.HttpServletRequest;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpRequest;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
+import com.desert.demo.dto.DTOCart;
+import com.desert.demo.service2.ServiceCartList;
+
 @Controller
 public class Controller2 {
+	
+	@Autowired
+	ServiceCartList servicecartlist;
+	
 	@RequestMapping("/")
 	public String root() throws Exception {
 		return "redirect:mainForm";
@@ -18,14 +32,21 @@ public class Controller2 {
 	}
 
 	@RequestMapping("/buyerCart")
-	public String BuyerOderList(RedirectAttributes redirect) {
+	public String BuyerOderList(RedirectAttributes redirect, HttpServletRequest request) {
+		
 		redirect.addAttribute("contentPage", "myPage/buyerPage/buyerCart.jsp");
+		// 장바구니 버튼을 눌렀을때 cart테이블에 저장되어있는 상품 정보를 list로 뿌려주기 위한 서비스호출 로직
+		ArrayList<DTOCart> list = servicecartlist.ListCart();
+		// 비즈니스 로직을 완료 후 ArratList레퍼런스에 담은 값을 뷰페이지에서 list키값으로 찾기위한 로직
+		request.getSession().setAttribute("list", list);
+		
 		return "redirect:mainForm";
 	}
 
 	@RequestMapping("/buyerOrderForm")
 	public String buyerOrderForm(RedirectAttributes redirect) {
 		redirect.addAttribute("contentPage", "myPage/buyerPage/buyerOrderForm.jsp");
+		
 		return "redirect:mainForm";
 	}
 
@@ -38,7 +59,7 @@ public class Controller2 {
 	@RequestMapping("/buyerOrderList")
 	public String buyerOrderList(RedirectAttributes redirect) {
 		redirect.addAttribute("contentPage","myPage/buyerPage/buyerOrderList.jsp");
-		return "redirect:home";
+		return "redirect:mainForm";
 	}
 
 //	=============================

@@ -1,5 +1,11 @@
+<%@page import="com.desert.demo.dto.DTOCart"%>
+<%@page import="java.util.ArrayList"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%
+	ArrayList<DTOCart> list = (ArrayList<DTOCart>) session.getAttribute("list");
+%>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -12,8 +18,10 @@
     </style>
 </head>
 <body>
+<!-- 장바구니에는 어떤판매자(판매자인덱스)가 어떤 상품(상품인덱스)을 팔고 내가 어떤 상품을 담았는지만 알면되는 페이지 -->
 <div class = "checkbox_group" style="margin:50px">
 <h2 style="margin-top: 50px;width:70%;margin: auto;margin-bottom: 20px">장바구니</h2>
+
 
     <input class="" type="checkbox" name="exampleRadios" id="check_all" value="option1">
     <label class="form-check-label" for="check_all" style="margin-bottom: 10px"> 전체선택   </label>
@@ -22,7 +30,6 @@
         <div style="display: inline-block; width: 10%;text-align: center">
             <input class="" type="checkbox" name="exampleRadios" id="cart1" value="option1">
         </div>
-
         <div style="display: inline-block; width: 22.5%; margin: 0;">
             <img src="img/imgDK/img_name1.jpg">
         </div>
@@ -47,36 +54,37 @@
         <div style="display: inline-block; width:10%; margin: 0;">
             <a href="#"> <button type="button" class="btn btn-secondary" style="width: 50px;font-size: 12px">삭제</button></a>
         </div>
-</div>
+	</div>
+	<!-- 여기까지가 상품 1개 정보 -->
 
-    <div style="width: 70%;padding: 20px;border-top: #F88687 2px solid;border-bottom: #F88687 2px solid;">
-        <div style="display: inline-block; width: 10%;text-align: center">
-            <input class="" type="checkbox" name="exampleRadios" id="cart1" value="option1">
-        </div>
+<!--     <div style="width: 70%;padding: 20px;border-top: #F88687 2px solid;border-bottom: #F88687 2px solid;"> -->
+<!--         <div style="display: inline-block; width: 10%;text-align: center"> -->
+<!--             <input class="" type="checkbox" name="exampleRadios" id="cart1" value="option1"> -->
+<!--         </div> -->
 
-        <div style="display: inline-block; width: 22.5%; margin: 0;">
-            <img src="http://placehold.it/120x150">
-        </div>
+<!--         <div style="display: inline-block; width: 22.5%; margin: 0;"> -->
+<!--             <img src="http://placehold.it/120x150"> -->
+<!--         </div> -->
 
-        <div style="display: inline-block; width:22.5%; margin: 0;">
-            <label class="form-check-label" for="cart1">
-                [category]<br> 이름<br> 가격
-            </label>
-        </div>
+<!--         <div style="display: inline-block; width:22.5%; margin: 0;"> -->
+<!--             <label class="form-check-label" for="cart1"> -->
+<!--                 [category]<br> 이름<br> 가격 -->
+<!--             </label> -->
+<!--         </div> -->
 
-        <div style="display: inline-block; width:22.5%; margin: 0;">
-            <!--  max값은 추후 {~~.goodsstock}으로 바꿔야함 -->
+<!--         <div style="display: inline-block; width:22.5%; margin: 0;"> -->
+<!--              max값은 추후 {~~.goodsstock}으로 바꿔야함 -->
 
-            <button type="button" class="plus" style="border: none;background: none">+</button>
-            <input type="number" class="numBox" min="1" max="100" value="1" readonly="readonly" style="text-align:center"/>
-            <button type="button" class="minus" style="border: none;background: none">-</button>
+<!--             <button type="button" class="plus" style="border: none;background: none">+</button> -->
+<!--             <input type="number" class="numBox" min="1" max="100" value="1" readonly="readonly" style="text-align:center"/> -->
+<!--             <button type="button" class="minus" style="border: none;background: none">-</button> -->
 
-        </div>
+<!--         </div> -->
 
-        <div style="display: inline-block; width:10%; margin: 0;">
-            <a href="#"> <button type="button" class="btn btn-secondary" style="width: 50px;font-size: 12px">삭제</button></a>
-        </div>
-    </div>
+<!--         <div style="display: inline-block; width:10%; margin: 0;"> -->
+<!--             <a href="#"> <button type="button" class="btn btn-secondary" style="width: 50px;font-size: 12px">삭제</button></a> -->
+<!--         </div> -->
+<!--     </div> -->
     <a href="#"> <button type="button" class="dele" style="width: 60px;font-size: 12px;padding: 3px;height: 30px;
                        border-radius: 3px; background-color: #F88687; color: #ffffff;border: none; margin: 10px 0px 30px 0px ">선택삭제</button></a>
 </div>
