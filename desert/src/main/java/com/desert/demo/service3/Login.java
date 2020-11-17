@@ -2,7 +2,7 @@ package com.desert.demo.service3;
 
 import com.desert.demo.dto.DTOMember;
 
-public interface ILogin {
+public interface Login {
 
 //아이디, 비밀번호 일치 체크
 public Boolean idPwCheck(String id, String pw);

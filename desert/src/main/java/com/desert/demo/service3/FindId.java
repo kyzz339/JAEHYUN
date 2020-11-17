@@ -1,5 +1,5 @@
 package com.desert.demo.service3;
 
-public interface IFindId {
+public interface FindId {
 
 }
