@@ -30,11 +30,13 @@
         <div style="display: inline-block; width: 10%;text-align: center">
             <input class="" type="checkbox" name="exampleRadios" id="cart1" value="option1">
         </div>
+        
+        <div style="display : inline-block; width : 800px; height : 200px;">
         <div style="display: inline-block; width: 22.5%; margin: 0;">
-            <img src="img/imgDK/img_name1.jpg">
+            <img src="img/imgDK/img_name1.jpg" style="width: 150px; height: 150px">
         </div>
 
-        <div style="display: inline-block; width:22.5%; margin: 0;">
+        <div style="display: inline-block; width:22.5%; margin-left: 70px;">
             <label class="form-check-label" for="cart1">
                 [cake]<br>
                 묵직한 한방 케이크
@@ -42,7 +44,7 @@
             </label>
         </div>
 
-        <div style="display: inline-block; width:22.5%; margin: 0;">
+        <div style="display: inline-block; width:22.5%; margin-left: 10px;">
             <!--  max값은 추후 {~~.goodsstock}으로 바꿔야함 -->
 
             <button type="button" class="plus" style="border: none;background: none">+</button>
@@ -50,10 +52,12 @@
             <button type="button" class="minus" style="border: none;background: none">-</button>
 
         </div>
-
-        <div style="display: inline-block; width:10%; margin: 0;">
+	
+        <span style="display: block; width:10%; margin: 0;">
             <a href="#"> <button type="button" class="btn btn-secondary" style="width: 50px;font-size: 12px">삭제</button></a>
-        </div>
+        </span>
+	</div>
+	
 	</div>
 	<!-- 여기까지가 상품 1개 정보 -->
 
