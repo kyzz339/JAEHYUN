@@ -16,5 +16,4 @@ public interface MemberMapper {
 	 public int logout();
 	 public int paymentTotal();
 
-	 
 }
