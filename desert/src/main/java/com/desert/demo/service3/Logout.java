@@ -1,5 +1,5 @@
 package com.desert.demo.service3;
 
-public interface IFindPW {
+public interface Logout {
 
 }
