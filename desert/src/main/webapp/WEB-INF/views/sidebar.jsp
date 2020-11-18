@@ -19,13 +19,14 @@
       <!-- 사이드바 출력 구분 -->
  <script>
         var strSidebar = "";
-    	var memberType = "seller"; /* DB연동 필요 */
+    	var memberType = "buyer"; /* DB연동 필요 */
     	
   function sidebarConditional(){
         
     	if(memberType==="admin"){
     		/* 관리자 사이드 바 */
     		//${pageContext.request.contextPath}/
+    		
     		strSidebar += '<a href="/adminSellerManage"; class="list-group-item list-group-item-action bg-light">판매자 관리</a>';
     		strSidebar += '<a href="/adminBuyerManage"  class="list-group-item list-group-item-action bg-light">회원 관리</a>';
     		strSidebar += '<a href="/adminNoticeManage" class="list-group-item list-group-item-action bg-light">공지사항 관리</a>';

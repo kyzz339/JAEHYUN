@@ -91,7 +91,7 @@
 </form>
 
 <div style="margin: 0 auto; width: 100px;padding-bottom: 100px">
-    <a href="#"> <button type="submit" class="btn btn-secondary" >가입하기</button></a>
+    <a href="/buyerJoinAction"> <button type="submit" class="btn btn-secondary" >가입하기</button></a>
 </div>
 
 

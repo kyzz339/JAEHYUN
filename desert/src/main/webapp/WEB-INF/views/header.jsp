@@ -78,15 +78,15 @@
 <ul class="nav nav-pills" style="float: right; margin-right: 50px;">
 	<script>
 	   var strTopMenu = "";
-	   	var memberType = "0"; /* DB연동 필요 */
-	   	var memberName = ""; /* DB연동 필요 */
+	   	var memberType = !document.userInfo.id.value; /* DB연동 필요 */
+	   	var memberName = !document.userInfo.id.value; /* DB연동 필요 */
 	   	
 	   	function topMenuConditional(){
 	       
 	   	if(memberType==="로그인"){
 			/* 비로그인 시 */
-	   		strTopMenu += '	<li role="presentation" style="margin-left: 25px; color: black;"><a href="#">로그인</a></li>';
-	   		strTopMenu += '	<li role="presentation" style="margin-left: 25px; color: black;"><a href="#">회원가입</a></li>';
+	   		strTopMenu += '	<li role="presentation" style="margin-left: 25px; color: black;"><a href="/cmLogin">로그인</a></li>';
+	   		strTopMenu += '	<li role="presentation" style="margin-left: 25px; color: black;"><a href="/cmJoinForm">회원가입</a></li>';
 		}
 	   	else if(memberType ==="관리자")
 	   	{
