@@ -28,7 +28,7 @@
 <!-- ==================================================================================================================== -->	
 <!-- 5. 아이디 중복 확인  -->
 
-<select id="overlapID" parameterType="int" resultType="com.desert.demo.dto.DTOMember">
+<select id="overlapID" parameterType="int" resultType="_int">
 	SELECT * FROM member WHERE id=#{id}
 </select>
 <!-- ==================================================================================================================== -->	
