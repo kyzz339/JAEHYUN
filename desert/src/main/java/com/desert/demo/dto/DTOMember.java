@@ -2,6 +2,8 @@ package com.desert.demo.dto;
 
 import java.time.LocalDate;
 
+import org.springframework.stereotype.Component;
+
 import lombok.Data;
 
 @Data

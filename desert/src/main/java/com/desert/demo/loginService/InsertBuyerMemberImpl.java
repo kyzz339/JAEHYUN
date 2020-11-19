@@ -6,14 +6,15 @@ import java.util.Random;
 import javax.servlet.http.HttpServletRequest;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Qualifier;
 
 import com.desert.demo.dto.DTOMember;
 import com.desert.demo.mapper.MemberMapper;
 
 public class InsertBuyerMemberImpl implements InsertBuyerMember {
-
 	@Autowired
 	MemberMapper memberMapper;
+	
 	@Autowired
 	DTOMember dtoMember;
 	
