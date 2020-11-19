@@ -22,26 +22,34 @@
 <!-- ==================================================================================================================== -->	
 <!-- 4. 회원 정보 조회 (Session 에 값 저장) -->
 
-<select id="getMemberInfo" parameterType="int" resultType="com.desert.demo.dto.DTOMember">
-	SELECT * FROM member WHERE id=#{id}
+<select id="getMemberInfo" resultType="com.desert.demo.dto.DTOMember">
+	SELECT * FROM member WHERE id=#{id};
 </select>
 <!-- ==================================================================================================================== -->	
 <!-- 5. 아이디 중복 확인  -->
 
-<select id="overlapID" parameterType="int" resultType="_int">
-	SELECT * FROM member WHERE id=#{id}
+<select id="overlapID" parameterType="com.desert.demo.dto.DTOMember" resultType="_int">
+	SELECT COUNT(*) FROM member WHERE id=#{id};
 </select>
 <!-- ==================================================================================================================== -->	
 <!-- 6. 아이디 찾기  -->
-
+<select id="findID" parameterType="com.desert.demo.dto.DTOMember" resultType="com.desert.demo.dto.DTOMember">
+	SELECT * FROM member WHERE name=#{name} AND email=#{email};
+</select>
 <!-- ==================================================================================================================== -->	
 <!-- 7. 비밀번호 찾기  -->
-
+<select id="findPW" parameterType="com.desert.demo.dto.DTOMember" resultType="com.desert.demo.dto.DTOMember">
+	SELECT * FROM member WHERE id=#{id} AND email=#{email} AND name=#{name};
+</select>
 <!-- ==================================================================================================================== -->	
 <!-- 8. 비밀번호 재 확인  -->
-
+<select id="pwCheck" parameterType="com.desert.demo.dto.DTOMember" resultType="_int">
+	SELECT COUNT(*) FROM member WHERE id=#{id} AND pw=#{pw};
+</select>
 <!-- ==================================================================================================================== -->	
 <!-- 9. 로그인  -->
-
+<select id="login" parameterType="com.desert.demo.dto.DTOMember" resultType="_int">
+	SELECT COUNT(*) FROM member WHERE id=#{id} AND pw=#{pw}
+</select>
 <!-- ==================================================================================================================== -->	
 </mapper>

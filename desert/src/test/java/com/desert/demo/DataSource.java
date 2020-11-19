@@ -5,6 +5,10 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.context.ApplicationContext;
 
+import com.desert.demo.dto.DTOMember;
+import com.desert.demo.loginService.Login;
+import com.desert.demo.mapper.MemberMapper;
+
 @SpringBootTest
 public class DataSource {
 	
@@ -12,6 +16,11 @@ public class DataSource {
 	    private ApplicationContext context;
 	    @Autowired
 	    private SqlSessionFactory sessionFactory;
+	    @Autowired
+	    Login login;
+	    @Autowired
+	    MemberMapper mapper;
+	    
 	    @Test
 	    void contextLoads(){
 	    }
@@ -34,5 +43,13 @@ public class DataSource {
 	        }
 	    }
 	
+	    @Test
+	    public void loginTest() {
+	    	DTOMember dto=new DTOMember();
+	    	dto.setId("buyer");
+	    	dto.setPw("1111");
+	    	int result = mapper.login(dto);
+	    	System.out.println("결과는"+result);
+	    }
 	
 }

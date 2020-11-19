@@ -1,5 +1,7 @@
 package com.desert.demo.mapper;
 
+import javax.servlet.http.HttpServletRequest;
+
 import org.apache.ibatis.annotations.Mapper;
 import org.apache.ibatis.annotations.Param;
 
@@ -25,7 +27,7 @@ public interface MemberMapper {
 	 public int overlapID(@Param("id") String id);
 		 	 
 //   6.아이디 찾기
-	 public int findID(@Param("id") String id,
+	 public int findID(@Param("name") String name,
 			 		@Param("email") String email);
 	 
 //   7.비밀번호 찾기
@@ -34,10 +36,14 @@ public interface MemberMapper {
 					 @Param("email") String email);
 	 
 // 	 8. 비밀번호 재 확인 (마이페이지 수정 전)
-	 public int pwCheck(@Param("pw") String pw);
+	 public int pwCheck(@Param("id") String id,
+			 			@Param("pw") String pw);
 	 
 //	 9. 로그인
-	 public int login(@Param("id") String id,
-			 		  @Param("pw") String pw);
+//	 public int login(@Param("id") String id,
+//			 		  @Param("pw") String pw);
+	 
+	 
+	 public int login(DTOMember dtoMember);
 
 }
