@@ -10,7 +10,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import com.desert.demo.dto.DTOMember;
 import com.desert.demo.mapper.MemberMapper;
 
-public class BuyerMemberImpl implements BuyerMember {
+public class InsertBuyerMemberImpl implements InsertBuyerMember {
 
 	@Autowired
 	MemberMapper memberMapper;
@@ -36,7 +36,6 @@ public class BuyerMemberImpl implements BuyerMember {
 		dtoMember.setPhone(req.getParameter("phone"));
 		dtoMember.setAddress(req.getParameter("address"));
 		dtoMember.setRegdate(LocalDate.now());
-		dtoMember.setTotalPoint(0);
 		dtoMember.setVerifiCode(makeVerifyCode());
 		dtoMember.setDoPromotion(req.getParameter("promotion"));
 		
