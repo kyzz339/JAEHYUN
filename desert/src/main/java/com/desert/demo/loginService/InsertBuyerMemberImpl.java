@@ -21,13 +21,13 @@ public class InsertBuyerMemberImpl implements InsertBuyerMember {
 	@Autowired
 	DTOMember dtoMember;
 	
-	public int makeVerifyCode() {
-		// verifi code 난수 생성기
-		Random random = new Random();
-		// 0~999999 생성
-		int num =random.nextInt(999999);
-		 return num;
-	}
+//	public int makeVerifyCode() {
+//		// verifi code 난수 생성기
+//		Random random = new Random();
+//		// 0~999999 생성
+//		int num =random.nextInt(999999);
+//		 return num;
+//	}
 	
 	@Override
 	public int insertBuyerMember(HttpServletRequest request) {
@@ -37,9 +37,11 @@ public class InsertBuyerMemberImpl implements InsertBuyerMember {
 		dtoMember.setPw(request.getParameter("pw"));
 		dtoMember.setEmail(request.getParameter("email"));
 		dtoMember.setPhone(request.getParameter("phone"));
-		dtoMember.setAddress(request.getParameter("address"));
+		dtoMember.setAddress(request.getParameter("address1"));
+//		dtoMember.setAddress(request.getParameter("address2"));
+//		dtoMember.setAddress(request.getParameter("address3"));
 		dtoMember.setRegdate(LocalDate.now());
-		dtoMember.setVerifiCode(makeVerifyCode());
+//		dtoMember.setVerifiCode(makeVerifyCode());
 		dtoMember.setDoPromotion(request.getParameter("promotion"));
 		
 		int nResult = memberMapper.insertMember(dtoMember);

@@ -19,4 +19,20 @@ public class DTOMember {
 	private int buyGoodsIdx;
 	private int verifiCode;
 	private String doPromotion;
+	
+//	public DTOMember() {}
+//
+//	public DTOMember(String name) {
+//		this.name = name;
+//	}
+//	
+//	public String getName() {
+//		return name;
+//	}
+//
+//	public void setName(String name) {
+//		this.name = name;
+//	}
+//	
+	
 }

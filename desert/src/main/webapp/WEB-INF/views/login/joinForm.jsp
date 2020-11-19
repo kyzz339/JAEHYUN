@@ -21,37 +21,37 @@
     <div class="form-group">
         <label for="id">아이디</label>
         <button type="button" class="btn btn-secondary" style="font-size: 10px;padding: 5px;margin: 10px" >중복 확인</button><br>
-        <input type="text" class="form-control" id="id" placeholder="6자 이상의 영문과 숫자 조합"><br>
+        <input type="text" class="form-control" name="id" id="id" placeholder="6자 이상의 영문과 숫자 조합"><br>
     </div>
     <div class="form-group">
         <label for="pw">비밀번호</label><br>
-        <input type="password" class="form-control" id="pw" placeholder="비밀번호를 입력해 주세요"><br>
+        <input type="password" class="form-control" name="pw" id="pw" placeholder="비밀번호를 입력해 주세요"><br>
     </div>
-    <div class="form-group">
-        <label for="pwCheck">비밀번호 확인</label><br>
-        <input type="password" class="form-control" id="pwCheck" placeholder="비밀번호를 한번 더 입력해 주세요"><br>
-    </div>
+<!--     <div class="form-group"> -->
+<!--         <label for="pwCheck">비밀번호 확인</label><br> -->
+<!--         <input type="password" class="form-control" name="pwCheck" id="pwCheck" placeholder="비밀번호를 한번 더 입력해 주세요"><br> -->
+<!--     </div> -->
     <div class="form-group">
         <label for="name">이름</label><br>
-        <input type="text" class="form-control" id="name" placeholder="이름을 입력해 주세요"><br>
+        <input type="text" class="form-control" name="name" id="name" placeholder="이름을 입력해 주세요"><br>
     </div>
     <div class="form-group">
         <label for="email">이메일</label>
         <button type="button" class="btn btn-secondary" style="font-size: 10px;padding: 5px;margin: 10px" >중복 확인</button><br>
-        <input type="text" class="form-control" id="email" placeholder="예:DesertBuyer@desert.com"><br>
+        <input type="text" class="form-control" name="email" id="email" placeholder="예:DesertBuyer@desert.com"><br>
     </div>
     <div class="form-group">
         <label for="phone">휴대폰</label></br>
-        <input type="text" class="form-control" id="phone" placeholder="숫자만 입력해 주세요"><br>
+        <input type="text" class="form-control" name="phone" id="phone" placeholder="숫자만 입력해 주세요"><br>
     </div>
         <div class="form-group">
 
             <label for="phone">우편번호</label>
             <button type="button" class="btn btn-secondary" onclick="openZipSearch()"
                     style="margin: 10px;font-size: 12px;width: 50px;height: 25px">검색</button><br>
-            <input type="text" class="form-control" id="address1" placeholder="우편번호" style="width: 120px;margin-right: 20px">
-            <input type="text" class="form-control" id="address2" placeholder="주소" style="width: 260px;margin-bottom: 20px"></br>
-            <input type="text" class="form-control" id="address3" placeholder="상세주소">
+            <input type="text" class="form-control" name="address1" id="address1" placeholder="우편번호" style="width: 120px;margin-right: 20px">
+            <input type="text" class="form-control" name="address2" id="address2" placeholder="주소" style="width: 260px;margin-bottom: 20px"></br>
+            <input type="text" class="form-control" name="address3" id="address3" placeholder="상세주소">
 
         </div>
     </div>
@@ -88,10 +88,8 @@
         </label><br>
 
 	</div>
-
-
 	<div style="margin: 0 auto; width: 100px;padding-bottom: 100px">
-		<button type="submit" class="btn btn-secondary" >가입하기</button>
+		<button type="submit" class="btn btn-secondary">가입하기</button>
 	</div>
 
 </form>
@@ -99,46 +97,46 @@
 <script src ="http://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
 <script type="text/javascript" src="../static/js/bootstrap.js"></script>
 <script>
-//     //체크박스 전체선택
-//     $(".checkbox_group").on("click", "#check_all", function () {
-//         $(this).parents(".checkbox_group").find('input').prop("checked", $(this).is(":checked"));
-//     });
+    //체크박스 전체선택
+    $(".checkbox_group").on("click", "#check_all", function () {
+        $(this).parents(".checkbox_group").find('input').prop("checked", $(this).is(":checked"));
+    });
 
-//     // 체크박스 개별 선택
-//     $(".checkbox_group").on("click", ".form-check-input", function() {
-//         var is_checked = true;
+    // 체크박스 개별 선택
+    $(".checkbox_group").on("click", ".form-check-input", function() {
+        var is_checked = true;
 
-//         $(".checkbox_group .form-check-input").each(function(){
-//             is_checked = is_checked && $(this).is(":checked");
-//         });
+        $(".checkbox_group .form-check-input").each(function(){
+            is_checked = is_checked && $(this).is(":checked");
+        });
 
-//         $("#check_all").prop("checked", is_checked);
-//     });
-//     /* 비밀번호 일치 여부 체크 */
-//     function onblur_passwordCheck() {
-//         $("#createPasswordSpan").remove();
-//         if ($("#${commandName} #userPw").val() != "" || $("#${commandName} #userPw2").val() != "") {
-//             if ($("#${commandName} #userPw").val() != $("#${commandName} #userPw2").val()) {
-//                 $(".passwordCheck").append('<span class="createPasswordSpan" id="createPasswordSpan"></span>');
-//                 $("#createPasswordSpan").css("color", "red").css("font-size", "10px").css("margin-left", "10px");
-//                 document.getElementById("createPasswordSpan").innerHTML = "비밀번호가 일치하지 않습니다.";
-//             }else{
-//                 $(".passwordCheck").append('<span class="createPasswordSpan" id="createPasswordSpan"></span>');
-//                 $("#createPasswordSpan").css("color", "blue").css("font-size", "10px").css("margin-left", "10px");
-//                 document.getElementById("createPasswordSpan").innerHTML = "비밀번호가 일치 합니다.";
-//             }
-//         }
-//     }
+        $("#check_all").prop("checked", is_checked);
+    });
+    /* 비밀번호 일치 여부 체크 */
+    function onblur_passwordCheck() {
+        $("#createPasswordSpan").remove();
+        if ($("#${commandName} #userPw").val() != "" || $("#${commandName} #userPw2").val() != "") {
+            if ($("#${commandName} #userPw").val() != $("#${commandName} #userPw2").val()) {
+                $(".passwordCheck").append('<span class="createPasswordSpan" id="createPasswordSpan"></span>');
+                $("#createPasswordSpan").css("color", "red").css("font-size", "10px").css("margin-left", "10px");
+                document.getElementById("createPasswordSpan").innerHTML = "비밀번호가 일치하지 않습니다.";
+            }else{
+                $(".passwordCheck").append('<span class="createPasswordSpan" id="createPasswordSpan"></span>');
+                $("#createPasswordSpan").css("color", "blue").css("font-size", "10px").css("margin-left", "10px");
+                document.getElementById("createPasswordSpan").innerHTML = "비밀번호가 일치 합니다.";
+            }
+        }
+    }
 
-//     function openZipSearch() {
-//         new daum.Postcode({
-//             oncomplete: function(data) {
-//                 $('[id=address1]').val(data.zonecode); // 우편번호 (5자리)
-//                 $('[id=address2]').val(data.address);
-//                 $('[id=address3]').val(data.buildingName);
-//             }
-//         }).open();
-//     }
+    function openZipSearch() {
+        new daum.Postcode({
+            oncomplete: function(data) {
+                $('[id=address1]').val(data.zonecode); // 우편번호 (5자리)
+                $('[id=address2]').val(data.address);
+                $('[id=address3]').val(data.buildingName);
+            }
+        }).open();
+    }
 </script>
 
 <script src="http://dmaps.daum.net/map_js_init/postcode.v2.js"></script>
