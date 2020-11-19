@@ -9,8 +9,8 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
-import com.desert.demo.dao.DAOMember;
 import com.desert.demo.dto.DTOMember;
+import com.desert.demo.mapper.MemberMapper;
 
 @Controller
 public class Controller3 {

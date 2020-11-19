@@ -1,8 +1,8 @@
-package com.desert.demo.dao;
+package com.desert.demo.mapper;
 
 import com.desert.demo.dto.DTOMember;
 
-public interface DAOGoods {
+public interface GoodsMapper {
 	public int insertGoods();
 	public int deleteGoods();
 	public int updateGoods();

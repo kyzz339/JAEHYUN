@@ -8,8 +8,8 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
-import com.desert.demo.dao.DAOMember;
 import com.desert.demo.dto.DTOMember;
+import com.desert.demo.mapper.MemberMapper;
 
 @Controller
 public class LoginActionController {
@@ -18,7 +18,7 @@ public class LoginActionController {
 //	======================
 
  	@Autowired
- 	private DAOMember memberMapper;
+ 	private MemberMapper memberMapper;
 	
 //	   로그인 액션
 	    @RequestMapping("/loginAction")

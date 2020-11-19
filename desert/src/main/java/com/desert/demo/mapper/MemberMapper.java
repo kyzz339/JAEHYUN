@@ -1,4 +1,4 @@
-package com.desert.demo.dao;
+package com.desert.demo.mapper;
 
 import org.apache.ibatis.annotations.Mapper;
 import org.apache.ibatis.annotations.Param;
@@ -6,7 +6,7 @@ import org.apache.ibatis.annotations.Param;
 import com.desert.demo.dto.DTOMember;
 
 @Mapper
-public interface DAOMember {
+public interface MemberMapper {
 	
 //	 1.회원 가입
 	 public int insertMember(DTOMember dtoMember);

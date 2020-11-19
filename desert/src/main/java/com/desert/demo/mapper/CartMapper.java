@@ -1,8 +1,8 @@
-package com.desert.demo.dao;
+package com.desert.demo.mapper;
 
 import com.desert.demo.dto.DTOCart;
 
-public interface DAOCart {
+public interface CartMapper {
 	public int insertCart();
 	public int deleteCart();
 	public DTOCart getCartInfo();
