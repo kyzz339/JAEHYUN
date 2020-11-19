@@ -13,44 +13,45 @@
 </head>
 
 <body>
-<h1 style="text-align: center;margin: 70px 30px 30px 30px;font-size: 30px;font-weight: bolder">개인회원가입</h1>
+<h1 style="text-align: center;margin: 70px 30px 30px 30px;font-size: 30px;font-weight: bolder">회원가입</h1>
 <hr style="border: solid 3px #F88687;width: 60%;background-color: #F88687">
-<form style="padding: 0">
+
+<form style="padding: 0" action="/joinFormAction" >
     <div style="width: 450px;margin: 0 auto">
     <div class="form-group">
         <label for="id">아이디</label>
         <button type="button" class="btn btn-secondary" style="font-size: 10px;padding: 5px;margin: 10px" >중복 확인</button><br>
-        <input type="text" class="form-control" id="id" placeholder="6자 이상의 영문과 숫자 조합"><br>
+        <input type="text" class="form-control" name="id" id="id" placeholder="6자 이상의 영문과 숫자 조합"><br>
     </div>
     <div class="form-group">
         <label for="pw">비밀번호</label><br>
-        <input type="text" class="form-control" id="pw" placeholder="비밀번호를 입력해 주세요"><br>
+        <input type="password" class="form-control" name="pw" id="pw" placeholder="비밀번호를 입력해 주세요"><br>
     </div>
-    <div class="form-group">
-        <label for="pwCheck">비밀번호 확인</label><br>
-        <input type="text" class="form-control" id="pwCheck" placeholder="비밀번호를 한번 더 입력해 주세요"><br>
-    </div>
+<!--     <div class="form-group"> -->
+<!--         <label for="pwCheck">비밀번호 확인</label><br> -->
+<!--         <input type="password" class="form-control" name="pwCheck" id="pwCheck" placeholder="비밀번호를 한번 더 입력해 주세요"><br> -->
+<!--     </div> -->
     <div class="form-group">
         <label for="name">이름</label><br>
-        <input type="text" class="form-control" id="name" placeholder="이름을 입력해 주세요"><br>
+        <input type="text" class="form-control" name="name" id="name" placeholder="이름을 입력해 주세요"><br>
     </div>
     <div class="form-group">
         <label for="email">이메일</label>
         <button type="button" class="btn btn-secondary" style="font-size: 10px;padding: 5px;margin: 10px" >중복 확인</button><br>
-        <input type="text" class="form-control" id="email" placeholder="예:DesertBuyer@desert.com"><br>
+        <input type="text" class="form-control" name="email" id="email" placeholder="예:DesertBuyer@desert.com"><br>
     </div>
     <div class="form-group">
         <label for="phone">휴대폰</label></br>
-        <input type="text" class="form-control" id="phone" placeholder="숫자만 입력해 주세요"><br>
+        <input type="text" class="form-control" name="phone" id="phone" placeholder="숫자만 입력해 주세요"><br>
     </div>
         <div class="form-group">
 
             <label for="phone">우편번호</label>
             <button type="button" class="btn btn-secondary" onclick="openZipSearch()"
                     style="margin: 10px;font-size: 12px;width: 50px;height: 25px">검색</button><br>
-            <input type="text" class="form-control" id="address1" placeholder="우편번호" style="width: 120px;margin-right: 20px">
-            <input type="text" class="form-control" id="address2" placeholder="주소" style="width: 260px;margin-bottom: 20px"></br>
-            <input type="text" class="form-control" id="address3" placeholder="상세주소">
+            <input type="text" class="form-control" name="address1" id="address1" placeholder="우편번호" style="width: 120px;margin-right: 20px">
+            <input type="text" class="form-control" name="address2" id="address2" placeholder="주소" style="width: 260px;margin-bottom: 20px"></br>
+            <input type="text" class="form-control" name="address3" id="address3" placeholder="상세주소">
 
         </div>
     </div>
@@ -59,7 +60,7 @@
     <span style="margin-left: 35%;font-weight: bolder;font-size: larger">
             이용약관동의
         </span>
-<div class="checkbox_group" style="width: 50%;margin-left: auto;float: right;margin-bottom: 50px;">
+	<div class="checkbox_group" style="width: 50%;margin-left: auto;float: right;margin-bottom: 50px;">
 
         <input class="form-check-input" type="checkbox" name="exampleRadios" id="check_all" value="option1">
         <label class="form-check-label" for="check_all">
@@ -86,14 +87,12 @@
             본인은 만 14세 이상입니다(필수)
         </label><br>
 
-</div>
+	</div>
+	<div style="margin: 0 auto; width: 100px;padding-bottom: 100px">
+		<button type="submit" class="btn btn-secondary">가입하기</button>
+	</div>
 
 </form>
-
-<div style="margin: 0 auto; width: 100px;padding-bottom: 100px">
-    <a href="/buyerJoinAction"> <button type="submit" class="btn btn-secondary" >가입하기</button></a>
-</div>
-
 
 <script src ="http://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
 <script type="text/javascript" src="../static/js/bootstrap.js"></script>
