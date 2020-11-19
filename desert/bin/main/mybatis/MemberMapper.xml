@@ -4,45 +4,44 @@
 	
 <!-- ==================================================================================================================== -->	
 <!-- 1.회원가입 -->	
-	
-<!-- 1-1 구매자 회원가입 -->
+
 <insert id="insertBuyerMember" parameterType="com.desert.demo.dto.DTOMember">
 	INSERT INTO MEMBER (type,name,id,pw,email,phone,address,do_block,regdate,total_amount,total_point,grade,verifi_code,do_promotion)
 	VALUES(0,#{name},#{id},#{pw},#{email},#{phone},#{address},#{doBlock},#{regdate},#{totalAmount},#{totalPoint},#{grade},#{verifiCode},#{doPromotion})
 </insert>
-<!-- 1-2 판매자 회원가입 -->
-<insert id="inserSellerMember" parameterType="com.desert.demo.dto.DTOMember">
-	INSERT INTO MEMBER (type,name,id,pw,email,phone,address,business_license,do_block,regdate,total_amount,total_point,grade,verifi_code,do_promotion)
-	VALUES(0,#{name},#{id},#{pw},#{email},#{phone},#{address},#{business_license},#{doBlock},#{regdate},#{totalAmount},#{totalPoint},#{grade},#{verifiCode},#{doPromotion})
-</insert>
 <!-- ==================================================================================================================== -->	
 <!-- 2.회원 정보 수정 -->
 
-<!-- 2-1 구매자 회원정보 수정 -->
 <update id="updateBuyerMember" parameterType="com.desert.demo.dto.DTOMember" >
         UPDATE MEMBER set password = #{password}, 
 </update>
-<!-- 2-2 판매자 회원정보 수정 -->
-
+<!-- ==================================================================================================================== -->	
+<!-- 3. 회원 타입 조회 (나중에 블럭기능 추가 시) -->
 
 
 <!-- ==================================================================================================================== -->	
-<!-- 3. 회원 블락(차단) 시키기 -->
-
-<!-- 3-1 회원 차단 시키기 -->
-<update id="doBlockMember">
-		UPDATE member SET do_block = 1 WHERE id=#{id}
-</update>
-<!-- 3-2 회원 차단 해제 -->
-<update id="undoBlockMember">
-		UPDATE member SET do_block = 0 WHERE id=#{id}
-</update>
-
-
-
-
+<!-- 4. 회원 정보 조회 (Session 에 값 저장) -->
 
 <select id="getMemberInfo" parameterType="int" resultType="com.desert.demo.dto.DTOMember">
 	SELECT * FROM member WHERE id=#{id}
 </select>
+<!-- ==================================================================================================================== -->	
+<!-- 5. 아이디 중복 확인  -->
+
+<select id="overlapID" parameterType="int" resultType="com.desert.demo.dto.DTOMember">
+	SELECT * FROM member WHERE id=#{id}
+</select>
+<!-- ==================================================================================================================== -->	
+<!-- 6. 아이디 찾기  -->
+
+<!-- ==================================================================================================================== -->	
+<!-- 7. 비밀번호 찾기  -->
+
+<!-- ==================================================================================================================== -->	
+<!-- 8. 비밀번호 재 확인  -->
+
+<!-- ==================================================================================================================== -->	
+<!-- 9. 로그인  -->
+
+<!-- ==================================================================================================================== -->	
 </mapper>
