@@ -5,7 +5,7 @@ import java.time.LocalDate;
 import org.springframework.stereotype.Component;
 
 import lombok.Data;
-
+@Component
 @Data
 public class DTOMember {
 	private int idx;

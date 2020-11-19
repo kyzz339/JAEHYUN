@@ -5,9 +5,12 @@
 <!-- ==================================================================================================================== -->	
 <!-- 1.회원가입 -->	
 
-<insert id="insertBuyerMember" parameterType="com.desert.demo.dto.DTOMember">
-	INSERT INTO MEMBER (type,name,id,pw,email,phone,address,do_block,regdate,total_amount,total_point,grade,verifi_code,do_promotion)
-	VALUES(0,#{name},#{id},#{pw},#{email},#{phone},#{address},#{doBlock},#{regdate},#{totalAmount},#{totalPoint},#{grade},#{verifiCode},#{doPromotion})
+<insert id="insertMember" parameterType="com.desert.demo.dto.DTOMember">
+	INSERT INTO MEMBER 
+		(name,id,pw,email,phone,address,regdate,verifi_code,do_promotion)
+	VALUES
+		(#{name}, #{id}, #{pw}, #{email}, #{phone}, #{address}, #{regdate}, #{verifiCode}, #{doPromotion})
+
 </insert>
 <!-- ==================================================================================================================== -->	
 <!-- 2.회원 정보 수정 -->

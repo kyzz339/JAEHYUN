@@ -13,9 +13,10 @@
 </head>
 
 <body>
-<h1 style="text-align: center;margin: 70px 30px 30px 30px;font-size: 30px;font-weight: bolder">개인회원가입</h1>
+<h1 style="text-align: center;margin: 70px 30px 30px 30px;font-size: 30px;font-weight: bolder">회원가입</h1>
 <hr style="border: solid 3px #F88687;width: 60%;background-color: #F88687">
-<form style="padding: 0">
+
+<form style="padding: 0" action="/joinFormAction" >
     <div style="width: 450px;margin: 0 auto">
     <div class="form-group">
         <label for="id">아이디</label>
@@ -24,11 +25,11 @@
     </div>
     <div class="form-group">
         <label for="pw">비밀번호</label><br>
-        <input type="text" class="form-control" id="pw" placeholder="비밀번호를 입력해 주세요"><br>
+        <input type="password" class="form-control" id="pw" placeholder="비밀번호를 입력해 주세요"><br>
     </div>
     <div class="form-group">
         <label for="pwCheck">비밀번호 확인</label><br>
-        <input type="text" class="form-control" id="pwCheck" placeholder="비밀번호를 한번 더 입력해 주세요"><br>
+        <input type="password" class="form-control" id="pwCheck" placeholder="비밀번호를 한번 더 입력해 주세요"><br>
     </div>
     <div class="form-group">
         <label for="name">이름</label><br>
@@ -59,7 +60,7 @@
     <span style="margin-left: 35%;font-weight: bolder;font-size: larger">
             이용약관동의
         </span>
-<div class="checkbox_group" style="width: 50%;margin-left: auto;float: right;margin-bottom: 50px;">
+	<div class="checkbox_group" style="width: 50%;margin-left: auto;float: right;margin-bottom: 50px;">
 
         <input class="form-check-input" type="checkbox" name="exampleRadios" id="check_all" value="option1">
         <label class="form-check-label" for="check_all">
@@ -86,58 +87,58 @@
             본인은 만 14세 이상입니다(필수)
         </label><br>
 
-</div>
+	</div>
+
+
+	<div style="margin: 0 auto; width: 100px;padding-bottom: 100px">
+		<button type="submit" class="btn btn-secondary" >가입하기</button>
+	</div>
 
 </form>
-
-<div style="margin: 0 auto; width: 100px;padding-bottom: 100px">
-    <a href="/buyerJoinAction"> <button type="submit" class="btn btn-secondary" >가입하기</button></a>
-</div>
-
 
 <script src ="http://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
 <script type="text/javascript" src="../static/js/bootstrap.js"></script>
 <script>
-    //체크박스 전체선택
-    $(".checkbox_group").on("click", "#check_all", function () {
-        $(this).parents(".checkbox_group").find('input').prop("checked", $(this).is(":checked"));
-    });
+//     //체크박스 전체선택
+//     $(".checkbox_group").on("click", "#check_all", function () {
+//         $(this).parents(".checkbox_group").find('input').prop("checked", $(this).is(":checked"));
+//     });
 
-    // 체크박스 개별 선택
-    $(".checkbox_group").on("click", ".form-check-input", function() {
-        var is_checked = true;
+//     // 체크박스 개별 선택
+//     $(".checkbox_group").on("click", ".form-check-input", function() {
+//         var is_checked = true;
 
-        $(".checkbox_group .form-check-input").each(function(){
-            is_checked = is_checked && $(this).is(":checked");
-        });
+//         $(".checkbox_group .form-check-input").each(function(){
+//             is_checked = is_checked && $(this).is(":checked");
+//         });
 
-        $("#check_all").prop("checked", is_checked);
-    });
-    /* 비밀번호 일치 여부 체크 */
-    function onblur_passwordCheck() {
-        $("#createPasswordSpan").remove();
-        if ($("#${commandName} #userPw").val() != "" || $("#${commandName} #userPw2").val() != "") {
-            if ($("#${commandName} #userPw").val() != $("#${commandName} #userPw2").val()) {
-                $(".passwordCheck").append('<span class="createPasswordSpan" id="createPasswordSpan"></span>');
-                $("#createPasswordSpan").css("color", "red").css("font-size", "10px").css("margin-left", "10px");
-                document.getElementById("createPasswordSpan").innerHTML = "비밀번호가 일치하지 않습니다.";
-            }else{
-                $(".passwordCheck").append('<span class="createPasswordSpan" id="createPasswordSpan"></span>');
-                $("#createPasswordSpan").css("color", "blue").css("font-size", "10px").css("margin-left", "10px");
-                document.getElementById("createPasswordSpan").innerHTML = "비밀번호가 일치 합니다.";
-            }
-        }
-    }
+//         $("#check_all").prop("checked", is_checked);
+//     });
+//     /* 비밀번호 일치 여부 체크 */
+//     function onblur_passwordCheck() {
+//         $("#createPasswordSpan").remove();
+//         if ($("#${commandName} #userPw").val() != "" || $("#${commandName} #userPw2").val() != "") {
+//             if ($("#${commandName} #userPw").val() != $("#${commandName} #userPw2").val()) {
+//                 $(".passwordCheck").append('<span class="createPasswordSpan" id="createPasswordSpan"></span>');
+//                 $("#createPasswordSpan").css("color", "red").css("font-size", "10px").css("margin-left", "10px");
+//                 document.getElementById("createPasswordSpan").innerHTML = "비밀번호가 일치하지 않습니다.";
+//             }else{
+//                 $(".passwordCheck").append('<span class="createPasswordSpan" id="createPasswordSpan"></span>');
+//                 $("#createPasswordSpan").css("color", "blue").css("font-size", "10px").css("margin-left", "10px");
+//                 document.getElementById("createPasswordSpan").innerHTML = "비밀번호가 일치 합니다.";
+//             }
+//         }
+//     }
 
-    function openZipSearch() {
-        new daum.Postcode({
-            oncomplete: function(data) {
-                $('[id=address1]').val(data.zonecode); // 우편번호 (5자리)
-                $('[id=address2]').val(data.address);
-                $('[id=address3]').val(data.buildingName);
-            }
-        }).open();
-    }
+//     function openZipSearch() {
+//         new daum.Postcode({
+//             oncomplete: function(data) {
+//                 $('[id=address1]').val(data.zonecode); // 우편번호 (5자리)
+//                 $('[id=address2]').val(data.address);
+//                 $('[id=address3]').val(data.buildingName);
+//             }
+//         }).open();
+//     }
 </script>
 
 <script src="http://dmaps.daum.net/map_js_init/postcode.v2.js"></script>
