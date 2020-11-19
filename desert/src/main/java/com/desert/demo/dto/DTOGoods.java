@@ -1,26 +1,18 @@
 package com.desert.demo.dto;
 
 import java.time.LocalDate;
+
 import lombok.Data;
 
 @Data
 public class DTOGoods {
-	private int index;
+	private int idx;
 	private String category;
-	private int sellerIdx; 
 	private String name;
-	private int  netPrice;
-	private String weightUnit; 
+	private int  price;
 	private String contents; 
-	private int stock; 
-	private int discountRate; 
-	private int finalPrice;
-	private String doDiscount; 
 	private LocalDate regdate; 
-	private int hit;  
-	private int salesAmount; 
-	private int doSale; 
+	private int hit;
 	private String imgName;
-	private String imgUrl; 
-
+	private String imgUrl;
 }

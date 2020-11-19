@@ -7,9 +7,8 @@ import lombok.Data;
 @Data
 public class DTOPerQus {
 
-	private int index;
+	private int idx;
 	private LocalDate questionDate;
-	private String category;
 	private String reply;
 	private String memberId;
 	private String answerContents;
