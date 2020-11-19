@@ -65,7 +65,6 @@ public class LoginController {
 	    @RequestMapping("/login")
 	    public String cmLogin(RedirectAttributes redirect) {
 	        redirect.addAttribute("contentPage", "login/login.jsp");
-	        
 	        return "redirect:mainForm";
 	    }
 	    
