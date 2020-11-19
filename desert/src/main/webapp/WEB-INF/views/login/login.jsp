@@ -36,13 +36,18 @@
 
 					<ul class="login_bottom p-t-50">
 						<li class="m-b-8">
-							<a href="#" class="txt2" style="color:black">
-								아이디 / 비밀번호 찾기
+							<a href="/findID" class="txt2" style="color:black">
+								아이디 찾기
 							</a>
 						</li>
 						<li>
-							<a href="#" class="txt2" style="color:black">
-								개인 / 기업 회원가입
+							<a href="/findPW" class="txt2" style="color:black">
+								비밀번호 찾기
+							</a>
+						</li>
+							<li>
+							<a href="/joinForm" class="txt2" style="color:black">
+								회원가입
 							</a>
 						</li>
 					</ul>
