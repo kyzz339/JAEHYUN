@@ -51,5 +51,10 @@ public class DataSource {
 	    	int result = mapper.login(dto);
 	    	System.out.println("결과는"+result);
 	    }
+	    
+	    @Test
+	    public void memberinfo () {
+//	    	GetMemberInfoimpl
+	    }
 	
 }
