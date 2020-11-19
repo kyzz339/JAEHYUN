@@ -28,7 +28,6 @@ public class InsertBuyerMemberImpl implements InsertBuyerMember {
 	@Override
 	public int insertBuyerMember(HttpServletRequest req) {
 
-		dtoMember.setType(0);
 		dtoMember.setName(req.getParameter("name"));
 		dtoMember.setId(req.getParameter("id"));
 		dtoMember.setPw(req.getParameter("pw"));
