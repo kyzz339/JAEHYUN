@@ -1,10 +1,10 @@
 package com.desert.demo.loginService;
 
-import org.apache.ibatis.annotations.Param;
+import org.springframework.stereotype.Service;
 
 import com.desert.demo.dto.DTOMember;
 
+@Service
 public interface GetMemberInfo {
-	public DTOMember getMemberInfo(@Param("id") String id);
-
+	public DTOMember getMemberInfo(String id);
 }

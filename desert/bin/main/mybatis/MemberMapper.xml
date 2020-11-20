@@ -7,10 +7,6 @@
 <!-- -->
 <!--  -->
 <insert id="insertMember" parameterType="com.desert.demo.dto.DTOMember">
-	insert into member 
-		(name, id, pw, email, phone, address, regdate, verifi_code, do_promotion)
-	values
-		(#{name}, #{id}, #{pw}, #{email}, #{phone}, #{address}, #{regdate}, #{verifiCode}, #{doPromotion})
 
 </insert>
 
@@ -18,7 +14,7 @@
 <!-- 2.회원 정보 수정 -->
 
 <update id="updateBuyerMember" parameterType="com.desert.demo.dto.DTOMember" >
-        UPDATE MEMBER set password = #{password}, 
+
 </update>
 <!-- ==================================================================================================================== -->	
 <!-- 3. 회원 타입 조회 (나중에 블럭기능 추가 시) -->
@@ -28,28 +24,32 @@
 <!-- 4. 회원 정보 조회 (Session 에 값 저장) -->
 
 <select id="getMemberInfo" resultType="com.desert.demo.dto.DTOMember">
-	SELECT * FROM member WHERE id=#{id};
+	SELECT * FROM member WHERE id=#{id}
 </select>
 <!-- ==================================================================================================================== -->	
 <!-- 5. 아이디 중복 확인  -->
 
 <select id="overlapID" parameterType="com.desert.demo.dto.DTOMember" resultType="_int">
-	SELECT COUNT(*) FROM member WHERE id=#{id};
+	SELECT COUNT(*) FROM member WHERE id=#{id}
 </select>
 <!-- ==================================================================================================================== -->	
 <!-- 6. 아이디 찾기  -->
-<select id="findID" parameterType="com.desert.demo.dto.DTOMember" resultType="com.desert.demo.dto.DTOMember">
-	SELECT * FROM member WHERE name=#{name} AND email=#{email};
+<select id="findID" resultType="_int">
+	SELECT COUNT(*) FROM member WHERE name=#{name} AND email=#{email}
+</select>
+
+<select id="getID" resultType="com.desert.demo.dto.DTOMember">
+	SELECT * FROM member WHERE name=#{name} AND email=#{email}
 </select>
 <!-- ==================================================================================================================== -->	
 <!-- 7. 비밀번호 찾기  -->
 <select id="findPW" parameterType="com.desert.demo.dto.DTOMember" resultType="com.desert.demo.dto.DTOMember">
-	SELECT * FROM member WHERE id=#{id} AND email=#{email} AND name=#{name};
+	SELECT * FROM member WHERE id=#{id} AND email=#{email} AND name=#{name}
 </select>
 <!-- ==================================================================================================================== -->	
 <!-- 8. 비밀번호 재 확인  -->
 <select id="pwCheck" parameterType="com.desert.demo.dto.DTOMember" resultType="_int">
-	SELECT COUNT(*) FROM member WHERE id=#{id} AND pw=#{pw};
+	SELECT COUNT(*) FROM member WHERE id=#{id} AND pw=#{pw}
 </select>
 <!-- ==================================================================================================================== -->	
 <!-- 9. 로그인  -->
