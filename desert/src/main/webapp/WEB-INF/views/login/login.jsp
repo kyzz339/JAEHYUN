@@ -10,7 +10,7 @@
 	<div class="limiter">
 		<div class="container-login100">
 			<div class="wrap-login100 p-t-5 p-b-5">
-				<form class="login100-form validate-form">
+				<form action="/loginAction" method="post" class="login100-form validate-form">
 					<span class="login100-form-title p-b-30">
 						로그인
 					</span>
@@ -18,18 +18,16 @@
 						<img src="/img/logo.png" alt="logo" style="display: block; margin: 0 auto; width:150px; height:150px;">
 					</span>
 					<div class="wrap-input100 validate-input m-t-35 m-b-35" data-validate = "아이디를 입력하세요!">
-						<input class="input100" type="text" name="아이디">
+						<input id="id" class="input100" type="text" name="id">
 						<span class="focus-input100" data-placeholder="아이디"></span>
 					</div>
 
 					<div class="wrap-input100 validate-input m-b-50" data-validate="비밀번호를 입력하세요!">
-						<input class="input100" type="password" name="비밀번호">
+						<input id="pw" class="input100" type="password" name="pw">
 						<span class="focus-input100" data-placeholder="비밀번호"></span>
 					</div>
-
 					<div class="container-login100-form-btn">
-						<button class="login100-form-btn" style="background-color:#F88687;  box-shadow: 5px 5px 5px 5px;">
-							
+						<button type="submit" class="login100-form-btn" style="background-color:#F88687;  box-shadow: 5px 5px 5px 5px;">
 							로그인
 						</button>
 					</div>

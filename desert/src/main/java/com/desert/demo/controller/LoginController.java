@@ -23,7 +23,11 @@ public class LoginController {
 	    }
 
 	    @GetMapping("/mainForm")
-	    public String MainForm() {
+		public String MainForm( HttpServletRequest req ) {
+						
+			System.out.println( "msg:" + req.getParameter("msg"));
+			req.getSession().setAttribute("msg", req.getParameter("msg"));
+
 	        return "mainForm"; //mainForm.jsp 호출
 	    }
 
