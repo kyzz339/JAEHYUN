@@ -30,6 +30,9 @@ public interface MemberMapper {
 	 public int findID(@Param("name") String name,
 			 		@Param("email") String email);
 	 
+	 public DTOMember getID(@Param("name") String name,
+						@Param("email") String email);
+	 
 //   7.비밀번호 찾기
 	 public int findPW(@Param("pw") String pw,
 					 @Param("name") String name, 

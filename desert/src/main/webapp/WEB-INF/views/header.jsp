@@ -1,6 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
-     
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -76,35 +76,28 @@
 <!-- 상단 메뉴 : 최현석-->
 <div>
 <ul class="nav nav-pills" style="float: right; margin-right: 50px;">
-	<script>
-	   var strTopMenu = "";
-	   	var memberType = !document.userInfo.id.value; /* DB연동 필요 */
-	   	var memberName = !document.userInfo.id.value; /* DB연동 필요 */
-	   	
-	   	function topMenuConditional(){
-	       
-	   	if(memberType==="로그인"){
-			/* 비로그인 시 */
-	   		strTopMenu += '	<li role="presentation" style="margin-left: 25px; color: black;"><a href="/cmLogin">로그인</a></li>';
-	   		strTopMenu += '	<li role="presentation" style="margin-left: 25px; color: black;"><a href="/cmJoinForm">회원가입</a></li>';
-		}
-	   	else if(memberType ==="관리자")
-	   	{
-	   		/* 관리자 로그인 */
-	   		strTopMenu += '<li role="presentation" style="margin-left: 25px; color: black;"><a href="#">관리자님 환영합니다.</a></li>';
-	   	}
-		else if(memberType ==="판매자")
-	   	{
-	   		/* 판매자 로그인 */
-	   		strTopMenu += '<li role="presentation" style="margin-left: 25px; color: black;"><a href="#">'+memberName+'님 환영합니다.</a></li>';
-	   	}
-		else if(memberType ==="구매자")
-	   	{
-	   		/* 구매자 로그인 */
-	   		 strTopMenu += '<li role="presentation" style="margin-left: 25px; color: black;"><a href="#">'+memberName+'님 환영합니다.</a></li>';
-	   	}
-	</script>
-	<li role="presentation" class="dropdown">
+	<c:set var="memberID" value="${SessionScope.sId}" />
+		<c:choose>
+    <c:when test="${memberID == 'admin'}">
+     </c:when>
+    <c:when test="${memberID == null}">
+       </c:when>
+    <c:otherwise>
+    </c:otherwise>
+</c:choose>
+<% if(session.getAttribute("sId")==null) { %>
+		<li role="presentation" style="margin-left: 25px; color: black;"><a href="/login"><h5>로그인</h5></a></li>
+    	<li role="presentation" style="margin-left: 25px; color: black;"><a href="/joinForm"><h5>회원가입</h5></a></li>
+<% }else if(session.getAttribute("sId")=="admin") {%>
+		<li role="presentation" style="margin-left: 25px; color: black;"><a href="/buyerManage"></h5>관리자님 환영합니다.</h5></a></li>
+        <li role="presentation" style="margin-left: 25px; color: black;"><a href="/logoutAction"><h5>로그아웃</h5></a></li>
+<% }else { %>
+	<li role="presentation" style="margin-left: 25px; color: black;"><a href="/myPage"><h5><%= session.getAttribute("sId") %>님 환영합니다.</h5></a></li>
+    <li role="presentation" style="margin-left: 25px; color: black;"><a href="/logoutAction"><h5>로그아웃</h5></a></li>
+    
+<% } %>
+
+	<li role="presentation" class="dropdown">		
 		  <a class="dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-expanded="false" style="margin-left: 25px; color: black;">
 		 	 <!-- 윙크 아이콘 -->
 		 	 <svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-emoji-wink" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
@@ -117,13 +110,7 @@
 		  </a>
 		  <ul class="dropdown-menu" role="menu" href="#">
 				<li>
-					<a href="#" style="color: black;">공지사항</a>
-				</li>
-				<li>
-					<a href="#" style="margin-left: 10px; color: black;">이벤트</a>
-				</li>
-				<li>
-					<a href="#" style="margin-left: 10px; color: black;">회사 소개</a>
+					<a href="#" style="color: black;">회사소개</a>
 				</li>
 				<li>
 					<a href="#" style="margin-left: 10px; color: black;">1:1 문의하기</a>
@@ -138,7 +125,7 @@
 <!-- 탑 배너 로고 : 최현석 -->
 <br>
 <div class="logo" >
-	<a href="/cmMain"><img src="/img/toplogo.png" alt="logo" style="display:block; margin-left: 700px; width:350px; height:150px;"></a>
+	<a href="/"><img src="/img/toplogo.png" alt="logo" style="display:block; margin-left: 700px; width:350px; height:150px;"></a>
 </div>
 <!-- 탑 배너 로고 끝 -->
 <!--===============================================================================================-->
@@ -166,14 +153,8 @@
 			  <a class="dropdown-item" href="#">기타(ECT)</a>
 			</div>
 		  </li>
-	  <li class="nav-item active" style="display:block; margin-left : 100px; ">
-		<a class="nav-link" href="#" style="color:white"> 신상품 </a>
-	  </li>
-	  <li class="nav-item active" style="display:block; margin-left : 100px; ">
-		<a class="nav-link" href="#" style="color:white"> 베스트 </a>
-	  </li>
-	  <li class="nav-item active" style="display:block; margin-left : 100px; ">
-		<a class="nav-link" href="#" style="color:white"> 이벤트 </a>
+		    <li class="nav-item active" style="display:block; margin-left : 20px; ">
+		<a class="nav-link" href="#" style="color:white"> 마이페이지 </a>
 	  </li>
 	  	<li class="nav-item icon" style="display:block; margin-left : 100px; ">
 	  		    <!-- 장바구니 아이콘 -->

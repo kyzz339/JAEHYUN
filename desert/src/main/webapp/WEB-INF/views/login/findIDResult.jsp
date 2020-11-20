@@ -23,7 +23,7 @@
 					<h5 style="text-align: center;"> 고객님의 아이디 찾기가 완료되었습니다! </h5>
 					<br>
 					<br>
-					<h2> 고객님의 아이디 : EzenZzang</h2>
+					<h2> 고객님의 아이디 : <%= session.getAttribute("sFindId") %></h2>
 					<br>
 					<br>
 					</div>

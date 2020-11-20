@@ -10,7 +10,7 @@
 	<div class="limiter">
 		<div class="container-login100">
 			<div class="wrap-login100 p-t-5 p-b-5">
-				<form class="login100-form validate-form">
+				<form action="/findIDAction" method="post" class="login100-form validate-form">
 					<span class="login100-form-title p-b-30">
 						아이디 찾기
 					</span>
@@ -18,17 +18,17 @@
 						<img src="/img/logo.png" alt="logo" style="display: block; margin: 0 auto; width:150px; height:150px;">
 					</span>
 					<div class="wrap-input100 validate-input m-t-35 m-b-35" data-validate = "이름을 입력하세요!">
-						<input class="input100" type="text" name="이름">
+						<input class="input100" type="text" id="name" name="name">
 						<span class="focus-input100" data-placeholder="고객님의 이름을 입력하세요."></span>
 					</div>
 
 					<div class="wrap-input100 validate-input m-b-50" data-validate="이메일을 입력하세요!">
-						<input class="input100" type="email" name="이메일">
+						<input class="input100" type="email" id="email" name="email">
 						<span class="focus-input100" data-placeholder="가입 시 등록한 이메일을 입력하세요."></span>
 					</div>
 
 					<div class="container-login100-form-btn">
-						<button class="login100-form-btn" style="background-color:#F88687;  box-shadow: 5px 5px 5px 5px;">
+						<button type="submit" class="login100-form-btn" style="background-color:#F88687;  box-shadow: 5px 5px 5px 5px;">
 						아이디 찾기							
 						</button>
 					</div>
