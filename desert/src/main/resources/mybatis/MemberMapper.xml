@@ -7,6 +7,10 @@
 <!-- -->
 <!--  -->
 <insert id="insertMember" parameterType="com.desert.demo.dto.DTOMember">
+   insert into member 
+      (name, id, pw, email, phone, address, regdate, verifi_code, do_promotion)
+   values
+      (#{name}, #{id}, #{pw}, #{email}, #{phone}, #{address}, #{regdate}, #{verifiCode}, #{doPromotion})
 
 </insert>
 
