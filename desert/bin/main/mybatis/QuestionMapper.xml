@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.desert.demo.mapper.QuestionMapper">
+<!-- ===================== 구매자 ============================================================================================= -->	
+<!-- 1. 게시물 올리기 -->	
+<insert id="insertQuestion" parameterType="String">
+   INSERT INTO per_qus
+      (question_date, reply, member_id, question_contents, question_title)
+	VALUES
+      (now(), 'N', #{memberId}, #{questionContents}, #{questionTitle})
+</insert>
+
+<!-- 2. 게시물 수정 -->
+<update id="updateQuestion" parameterType="com.desert.demo.dto.DTOPerQus">
+	UPDATE per_qus SET WHERE idx=#{idx}
+		question_date = now(), qustion_contents = #{questionContents},
+		question_title = #{questionTitle}
+</update>
+
+<!-- 2-1 답변 여부 ( 답변 달렸을 시에는 수정 불가능) -->
+<select id="replyCheck" resultType="_int">
+	SELECT COUNT(*) FROM per_qus WHERE idx=#{idx} AND reply='N'
+</select>
+
+<!-- 3. 게시물 삭제 -->
+<delete id="deleteQuestion">
+	DELETE FROM per_qus WHERE idx=#{idx}
+</delete>
+
+<!-- 4. 구매자 게시물 리스트 표시 -->
+<select id="getListBuyerQuestion" resultType="com.desert.demo.dto.DTOPerQus">
+	SELECT * FROM per_qus
+		WHERE member_id=#{memberId}
+		ORDER BY question_date, idx DESC
+</select>
+
+<!-- 5. 게시물 조회 -->
+<select id="selectQuestionDetail" resultType="com.desert.demo.dto.DTOPerQus">
+	SELECT * FROM per_qus WHERE idx=#{idx}
+</select>
+
+
+<!-- ==================== 관리자 ============================================================================================= -->	
+
+<!-- 5-1. 관리자 게시물 리스트 표시  (답변 안됨, 작성일 오래된 순으로 정렬) -->
+<select id="getNoReplyQuestionList"  resultType="com.desert.demo.dto.DTOPerQus">
+		SELECT * FROM per_qus
+		WHERE reply='N'
+		ORDER BY question_date, idx ASC
+</select>
+
+<!-- 5-2. 관리자 게시물 리스트 표시  (답변 됨, 답변일 빠른 순으로 정렬)-->
+<select id="getReplyQuestionList" resultType="com.desert.demo.dto.DTOPerQus">
+		SELECT * FROM per_qus
+		WHERE  reply='Y'
+		ORDER BY reply_date, idx DESC
+</select>
+
+<!-- 5-3. 관리자 게시물 리스트 표시  (전부 표시, 작성일 최신순으로 정렬)-->
+<select id="getAllQuestionList" resultType="com.desert.demo.dto.DTOPerQus">
+		SELECT * FROM per_qus
+		ORDER BY question_date, idx DESC
+</select>
+
+<!-- 6. 관리자 답변 달기 --> 
+<insert id="insertReply">
+   INSERT INTO per_qus WHERE idx=#{idx}
+      (reply, answer_contents, reply_date)
+	VALUES
+      ('Y', ${answerContents}, now())
+</insert>
+
+<!-- 7. 관리자 답변 수정 -->
+<update id="updateReply">
+	UPDATE per_qus SET WHERE idx=#{idx}
+		reply = 'Y', answerContent = #{answerContent}, reply_date = now()
+</update>
+
+<!-- 8. 관리자 답변 삭제 -->
+<delete id="deleteReply">
+	DELETE FROM per_qus WHERE idx=#{idx}
+</delete>
+
+<!-- 9. 총 게시물 카운팅 -->
+<select id="countAllQuestion" resultType="_int">
+	SELECT COUNT(*) FROM per_qus
+</select>
+
+<!-- 10. 미 답변 게시물 카운팅 -->
+<select id="countNoReplyQuestion" resultType="_int">
+	SELECT COUNT(*) FROM per_qus WHERE reply='N'
+</select>
+
+</mapper>
+

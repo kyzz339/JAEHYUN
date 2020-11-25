@@ -120,10 +120,13 @@ public class LoginActionController {
 
 //	    아이디 찾기
 	    @RequestMapping("/findIDAction")
-	    public String findIDAction(HttpServletRequest req, Model model) throws Exception {
+	    public String findIDAction(HttpServletRequest req, Model model, DTOMember dtoMember) throws Exception {
 	    	
-	    	FindIdImpl findId = new FindIdImpl();
-
+//	    	Spring에서는 파라미터에 DTO 객체를 넣어주면 뷰에서 넘어온 name 값과 일치하는 곳에
+//	    	자동으로 변수를 주입해준다.
+//	    	DTOMember.getName() ==뷰에 입력한 name
+	    	System.out.println(dtoMember.getEmail());
+	    		    	
 			String name = req.getParameter("name");
 			String email = req.getParameter("email");
 	    	

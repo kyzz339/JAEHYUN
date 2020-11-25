@@ -76,23 +76,14 @@
 <!-- 상단 메뉴 : 최현석-->
 <div>
 <ul class="nav nav-pills" style="float: right; margin-right: 50px;">
-	<c:set var="memberID" value="${SessionScope.sId}" />
-		<c:choose>
-    <c:when test="${memberID == 'admin'}">
-     </c:when>
-    <c:when test="${memberID == null}">
-       </c:when>
-    <c:otherwise>
-    </c:otherwise>
-</c:choose>
 <% if(session.getAttribute("sId")==null) { %>
 		<li role="presentation" style="margin-left: 25px; color: black;"><a href="/login"><h5>로그인</h5></a></li>
     	<li role="presentation" style="margin-left: 25px; color: black;"><a href="/joinForm"><h5>회원가입</h5></a></li>
-<% }else if(session.getAttribute("sId")=="admin") {%>
+<% }else if((session.getAttribute("sId")).equals("admin")){%>
 		<li role="presentation" style="margin-left: 25px; color: black;"><a href="/buyerManage"></h5>관리자님 환영합니다.</h5></a></li>
         <li role="presentation" style="margin-left: 25px; color: black;"><a href="/logoutAction"><h5>로그아웃</h5></a></li>
 <% }else { %>
-	<li role="presentation" style="margin-left: 25px; color: black;"><a href="/myPage"><h5><%= session.getAttribute("sId") %>님 환영합니다.</h5></a></li>
+	<li role="presentation" style="margin-left: 25px; color: black;"><a href="/cart"><h5><%= session.getAttribute("sId") %>님 환영합니다.</h5></a></li>
     <li role="presentation" style="margin-left: 25px; color: black;"><a href="/logoutAction"><h5>로그아웃</h5></a></li>
     
 <% } %>

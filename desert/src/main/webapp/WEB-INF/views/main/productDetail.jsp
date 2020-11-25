@@ -15,7 +15,11 @@
 #wrap  {
   margin: 0 auto;
   width: 0 auto;
+<<<<<<< HEAD
 }
+=======
+}  
+>>>>>>> branch 'SimpleDesert' of https://github.com/kyzz339/JAEHYUN.git
  #size{
   margin: auto;
   width: 100px;

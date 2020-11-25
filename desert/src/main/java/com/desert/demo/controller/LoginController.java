@@ -20,6 +20,7 @@ public class LoginController {
 
 	@Autowired
 	InsertBuyerMember ibmember;
+<<<<<<< HEAD
 	
 	@Autowired
 	DTOGoods goods;
@@ -39,12 +40,14 @@ public class LoginController {
 
 	        return "mainForm"; //mainForm.jsp 호출
 	    }
+=======
+>>>>>>> branch 'SimpleDesert' of https://github.com/kyzz339/JAEHYUN.git
 
 //		======================
 	 // 로그인 컨트롤러 
 //	 	======================
 
-	    @RequestMapping("/joinForm1")
+	    @RequestMapping("/joinForm")
 	    public String BuyerJoinForm(RedirectAttributes redirect) {
 	        redirect.addAttribute("contentPage", "login/joinForm.jsp");
 	        return "redirect:mainForm";
@@ -56,7 +59,7 @@ public class LoginController {
 	    	String name = request.getParameter("name");
 	    	System.out.println("넘어온값 : " + name);
 	    	ibmember.insertBuyerMember(request);
-	    	return "mainForm";
+	    	return "redirect:mainForm";
 	    }
 	    
 	    @RequestMapping("/findID")
@@ -94,6 +97,7 @@ public class LoginController {
 	        redirect.addAttribute("contentPage", "login/passwordCheck.jsp");
 	        return "redirect:mainForm";
 	    }
+<<<<<<< HEAD
 	    
 //		======================
 	 // 마이페이지 정보수정 매핑 
@@ -147,4 +151,6 @@ public class LoginController {
 			return "redirect:mainForm";
 		}
 	    
+=======
+>>>>>>> branch 'SimpleDesert' of https://github.com/kyzz339/JAEHYUN.git
 }
