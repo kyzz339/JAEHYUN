@@ -10,7 +10,7 @@
 <style>
 #wrap  {
   margin: 0 auto;
-  width: 1000px;
+  width: 0 auto;
 }  
  #size{
   margin: auto;

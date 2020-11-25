@@ -16,26 +16,12 @@ public class LoginController {
 
 	@Autowired
 	InsertBuyerMember ibmember;
-	
-	    @GetMapping("/")
-	    public String root() throws Exception {
-	        return "redirect:mainForm";
-	    }
-
-	    @GetMapping("/mainForm")
-		public String MainForm( HttpServletRequest req ) {
-						
-			System.out.println( "msg:" + req.getParameter("msg"));
-			req.getSession().setAttribute("msg", req.getParameter("msg"));
-
-	        return "mainForm"; //mainForm.jsp 호출
-	    }
 
 //		======================
 	 // 로그인 컨트롤러 
 //	 	======================
 
-	    @RequestMapping("/joinForm1")
+	    @RequestMapping("/joinForm")
 	    public String BuyerJoinForm(RedirectAttributes redirect) {
 	        redirect.addAttribute("contentPage", "login/joinForm.jsp");
 	        return "redirect:mainForm";
@@ -47,7 +33,7 @@ public class LoginController {
 	    	String name = request.getParameter("name");
 	    	System.out.println("넘어온값 : " + name);
 	    	ibmember.insertBuyerMember(request);
-	    	return "mainForm";
+	    	return "redirect:mainForm";
 	    }
 	    
 	    @RequestMapping("/findID")
@@ -85,15 +71,4 @@ public class LoginController {
 	        redirect.addAttribute("contentPage", "login/passwordCheck.jsp");
 	        return "redirect:mainForm";
 	    }
-	    
-//		======================
-	 // 마이페이지 정보수정 매핑 
-//	 	======================
-	    
-	    @RequestMapping("/myPageModify")
-	    public String buyerMyPageModify(RedirectAttributes redirect) {
-	        redirect.addAttribute("contentPage", "myPage/buyerPage/myPageModify.jsp");
-	        return "redirect:mainForm";
-	    }
-	    
 }
