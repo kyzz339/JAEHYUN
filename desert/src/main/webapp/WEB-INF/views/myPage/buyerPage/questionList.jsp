@@ -50,7 +50,7 @@ padding-bottom:10px;
 <body>
 <div>
 	<br />
-       <h2 style="text-align:center">1:1 문의 관리/답변</h2><br>
+       <h2 style="text-align:center">1:1 문의</h2><br>
 <div  style="width=500%; padding = 20px">
 <table>
 <!-- ================================ -->
@@ -66,13 +66,11 @@ padding-bottom:10px;
 <div >
 <tr class="list-group-item" style="margin : 0 auto;">
 <th width="100px">${ dto.memberId }</th>
-<th width="400px"><a href="selectQuestion?idx=${dto.idx}">${ dto.questionTitle }</th>
+<th width="400px">${ dto.questionTitle }</th>
 <th width="200px">${ dto.reply }</th>
 <th width="200px">${ dto.questionDate }</th>
 <th width="200px">
-	<div class="btn-group" role="group" aria-label="..." style="display: inline-block; margin: 0 auto; background-color : ##F2F2F2">
-	  <button type="button" href="/" class="btn btn-default" style="background-color: #F88687">질문수정</button>
-	   <button type="button" href="/deleteQuestion?idx=${dto.idx}" class="btn btn-default" style="background-color: #F88687">질문삭제</button>
+	   <button type="button"  class="btn btn-default" style="background-color: #F88687"><a href="/deleteQuestionAction?idx=${dto.idx}">질문삭제</a></button>
 </th>
 </tr>
 

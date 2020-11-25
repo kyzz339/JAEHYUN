@@ -63,23 +63,29 @@
 </select>
 
 <!-- 6. 관리자 답변 달기 --> 
-<insert id="insertReply">
-   INSERT INTO per_qus WHERE idx=#{idx}
-      (reply, answer_contents, reply_date)
-	VALUES
-      ('Y', ${answerContents}, now())
-</insert>
+<update id="insertReply">
+   UPDATE per_qus SET 
+     reply = 'Y',
+     answer_contents = #{answerContents},
+     reply_date = now()
+     WHERE idx=#{idx}
+</update>
 
 <!-- 7. 관리자 답변 수정 -->
 <update id="updateReply">
-	UPDATE per_qus SET WHERE idx=#{idx}
-		reply = 'Y', answerContent = #{answerContent}, reply_date = now()
+	UPDATE per_qus SET
+		(reply = 'Y', answer_content = #{answerContent}, reply_date = now())
+	 WHERE idx=#{idx}
 </update>
 
 <!-- 8. 관리자 답변 삭제 -->
-<delete id="deleteReply">
-	DELETE FROM per_qus WHERE idx=#{idx}
-</delete>
+<update id="deleteReply">
+	UPDATE per_qus SET
+     reply = 'N',
+     answer_contents = NULL,
+     reply_date = NULL
+     WHERE idx=#{idx}
+</update>
 
 <!-- 9. 총 게시물 카운팅 -->
 <select id="countAllQuestion" resultType="_int">

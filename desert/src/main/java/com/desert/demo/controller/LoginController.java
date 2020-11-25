@@ -20,29 +20,13 @@ public class LoginController {
 
 	@Autowired
 	InsertBuyerMember ibmember;
-<<<<<<< HEAD
+
 	
 	@Autowired
 	DTOGoods goods;
 	@Autowired
 	ServiceGoods serviceGoods;
 	
-	    @GetMapping("/")
-	    public String root() throws Exception {
-	        return "redirect:mainForm";
-	    }
-
-	    @GetMapping("/mainForm")
-		public String MainForm( HttpServletRequest req ) {
-						
-			System.out.println( "msg:" + req.getParameter("msg"));
-			req.getSession().setAttribute("msg", req.getParameter("msg"));
-
-	        return "mainForm"; //mainForm.jsp 호출
-	    }
-=======
->>>>>>> branch 'SimpleDesert' of https://github.com/kyzz339/JAEHYUN.git
-
 //		======================
 	 // 로그인 컨트롤러 
 //	 	======================
@@ -97,17 +81,8 @@ public class LoginController {
 	        redirect.addAttribute("contentPage", "login/passwordCheck.jsp");
 	        return "redirect:mainForm";
 	    }
-<<<<<<< HEAD
+
 	    
-//		======================
-	 // 마이페이지 정보수정 매핑 
-//	 	======================
-	    
-	    @RequestMapping("/myPageModify")
-	    public String buyerMyPageModify(RedirectAttributes redirect) {
-	        redirect.addAttribute("contentPage", "myPage/buyerPage/myPageModify.jsp");
-	        return "redirect:mainForm";
-	    }
 	    
 	    @GetMapping("/goodsRegForm")
 		public String OpengoodsRegForm(RedirectAttributes redirect) {
@@ -151,6 +126,4 @@ public class LoginController {
 			return "redirect:mainForm";
 		}
 	    
-=======
->>>>>>> branch 'SimpleDesert' of https://github.com/kyzz339/JAEHYUN.git
 }

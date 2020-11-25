@@ -81,12 +81,15 @@ public class QuestionActionController {
 		return "redirect";
 	}
 	
-	@RequestMapping("/deleteQuestion")
+	@RequestMapping("/deleteQuestionAction")
 	public String deleteQuestion(HttpServletRequest req, Model model, DTOPerQus dtoPerQus) {
 		
-		int idx = Integer.parseInt(req.getParameter("questionIdx"));
+		int idx = Integer.parseInt(req.getParameter("idx"));
 		
 		mapper.deleteQuestion(idx);
+		
+		model.addAttribute("msg","질문이 삭제 되었습니다.");
+		model.addAttribute("url","/adminQuestionList?listType=1");
 		
 		return "redirect";
 	}
@@ -99,8 +102,7 @@ public class QuestionActionController {
 		
 		req.getSession().setAttribute("selectQuestion", dto);
 		
-		redirect.addAttribute("contentPage", "myPage/questionPage/buyerQuestionWrite.jsp");
-		redirect.addAttribute("Page", 1);
+		redirect.addAttribute("contentPage", "myPage/buyerPage/questionWrite.jsp");
 		
 		return "redirect:mainForm";
 	}
@@ -109,32 +111,38 @@ public class QuestionActionController {
 	
 	
 	@RequestMapping("/adminReplyInsertAction")
-	public String adminquestionWriteAction (HttpServletRequest req, Model model, DTOPerQus dtoPerQus) {
+	public String adminQuestionWriteAction (HttpServletRequest req, Model model, DTOPerQus dtoPerQus) {
 		
 		HttpSession session = req.getSession();		
 
+		int idx = Integer.parseInt(session.getAttribute("idx").toString());
+		String answerContents = req.getParameter("answerContents");
 		
-		model.addAttribute("msg", "글이 등록되었습니다.");
-   		model.addAttribute("url","/");
+		questionService.writeReply(idx, answerContents);
+
+		model.addAttribute("msg", "답변이 등록되었습니다.");
+   		model.addAttribute("url","/adminQuestionList?listType=1");
 		
+   		
+   		
 		return "redirect";
 	}
 	
+	@RequestMapping("/adminReplyDeleteAction")
+	public String adminReplyDeleteAction (HttpServletRequest req, Model model, DTOPerQus dtoPerQus) {
 	
-	
-	
-	public String updateQuestion () {
-		return "";
-	}
-	
-	
-	public String getListBuyerQuestion(HttpServletRequest req, Model model,DTOPerQus dtoPerQus) {
+		HttpSession session = req.getSession();		
 		
-		HttpSession session = req.getSession();
+		int idx = Integer.parseInt(req.getParameter("idx"));
 
-		return "";
+		questionService.deleteReply(idx);
+		
+		model.addAttribute("msg", "답변이 삭제되었습니다.");
+   		model.addAttribute("url","/adminQuestionList?listType=1");
+   		
+		return "redirect";
+		
 	}
-	
 	
 	
 }

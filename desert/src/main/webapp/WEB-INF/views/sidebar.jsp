@@ -24,7 +24,7 @@
             <a href="/goodsRegForm" class="list-group-item list-group-item-action bg-light">상품 등록</a>
             <a href="/goodsRegList" class="list-group-item list-group-item-action bg-light">상품 리스트</a>
             <a href="/goodDelivery" class="list-group-item list-group-item-action bg-light">주문/배송 관리</a>
-    		<a href="/adminQuestionList" class="list-group-item list-group-item-action bg-light">1:1 문의 관리</a>  
+    		<a href="/adminQuestionList?listType=3" class="list-group-item list-group-item-action bg-light">1:1 문의 관리</a>  
 	<% }else { %>
 			<a class="list-group-item list-group-item-action bg-#5BB9A8" style="background-color : #5BB9A8;color : white">마이페이지</a>
             <a href="/cart" class="list-group-item list-group-item-action bg-light">장바구니</a>

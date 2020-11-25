@@ -11,14 +11,8 @@
 		<br />
 	<div>
 	<hr>
-	<form action="/questionWriteAction" method="post">
+	<form action="/adminReplyInsertAction" method="post">
         <table style="width: 70%; margin: 0 auto;">
-            <tr>
-			 <td style="width : 900px; height : 50px; text-align: center; background-color: #F98687; border: 1px solid"> 제목 </td>
-                <td style="background-color: white; color:black;">
-    			</td>
-				<td style="width :800px; height : 50px; background-color: #F9F9F9;" border:1px solid><%= session.getAttribute("questionTitle") %></td>
-            </tr>
             <tr>
                 <td width : 100px height="500px" style="background-color: #F98687; color:black; border: 1px solid; text-align: center;"> 내용 </td>
                 <td style="background-color: white; color:black;">
@@ -30,7 +24,7 @@
                 <td colspan="3"> 	             
 	                	<div class="btn-group" role="group" aria-label="..." style="display: inline-block; margin: 0 auto; padding-bottom: 200px; background-color : ##F2F2F2">
 				       <button type="submit" class="btn btn-default" style="background-color: #F88687">답변등록</button>
-					<button type="button" class="btn btn-default" style="background-color: #F88687"><a href="/questionList">글목록</a></button>
+					<button type="button" class="btn btn-default" style="background-color: #F88687"><a href="/adminQuestionList?listType=1">글목록</a></button>
 						</div>
                 </td>
             </tr>

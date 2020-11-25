@@ -31,12 +31,12 @@ aside {
 padding-bottom:10px;
    }
 </style>
-<%
-	List<DTOPerQus> list = (List<DTOPerQus>)session.getAttribute("questionList");
-	System.out.println( "list count:" + list.size() );
+ <%
+	List<DTOPerQus> questionList = (List<DTOPerQus>)session.getAttribute("questionList");
+/* 	System.out.println( "list count:" + list.size() ); */
 	String list_page = (String)session.getAttribute("page");
-	System.out.println( "list_page:" + list_page );
-	String page1_active = "";
+/* 	System.out.println( "list_page:" + list_page ); */
+/* 	String page1_active = "";
 	String page2_active = "";
 	String page3_active = "";
 	if(list_page.equals("1")) 
@@ -45,12 +45,12 @@ padding-bottom:10px;
 		page2_active = "active";
 	if(list_page.equals("3")) 
 		page3_active = "active";
-%>
+ */%>
 </head>
 <body>
 <div>
 	<br />
-       <h2 style="text-align:center">1:1 문의 관리/답변</h2><br>
+       <h2 style="text-align:center">1:1 문의 관리 답변</h2><br>
 <div  style="width=500%; padding = 20px">
 <table>
 <!-- ================================ -->
@@ -62,58 +62,69 @@ padding-bottom:10px;
 <th width="200px">관리</th>
 </tr>
 <!-- ================================ -->
-<div >
 <c:forEach var="dto" items="${questionList}">
+<div >
 <tr class="list-group-item" style="margin : 0 auto;">
-<th width="100px">${ dto.id }</th>
-<th width="400px"><a href="selectQuestion?idx=${dto.idx}">${ dto.title }</th>
-<th width="200px">${ dto.replyCheck }</th>
-<th width="200px">${ dto.regDate }</th>
-</tr>
-</c:forEach>
-</div>
-<!-- ================================ -->
+<th width="100px">${ dto.memberId }</th>
+<th width="400px">${ dto.questionTitle }</th>
+<th width="200px">${ dto.reply }</th>
+<th width="200px">${ dto.questionDate }</th>
 <th width="200px">
-	<div class="btn-group" role="group" aria-label="..." style="display: inline-block; margin: 0 auto; background-color : ##F2F2F2">
-	  <button type="button" href="#" class="btn btn-default" style="background-color: #F88687">답변등록</button>
-	   <button type="button" href="#" class="btn btn-default" style="background-color: #F88687">답변삭제</button>
-	</div>
+	  <button type="button"  class="btn btn-default" style="background-color: #F88687"><a href="/adminQuestionWrite?idx=${dto.idx}">답변등록</a></button>
+	   <button type="button"  class="btn btn-default" style="background-color: #F88687"><a href="/deleteQuestionAction?idx=${dto.idx}">답변삭제</a></button>
 </th>
-<!-- 질문 내용 출력 -->
+</tr>
+
 <div>
 <tr>
 <th  width="1400px" style="background-color : #F2F2F2; padding : 10px; text-align: center;">
 	<h5>질문내용</h5>
-	<p>쿠키시켰는데 배송이 일주일 째 안와요. 문자로 안내 받긴 했는데 내일오는거 맞죠?</p>
+	<p>${ dto.questionContents }p>
 </th>
 </div>
-</table>
-</div>
-<div >
-<tr class="list-group-item" style="margin : 0 auto;">
-
-<div class="centered">
-  <nav>
-  <ul class="pager">
-    <li class="previous disabled"><a href="#"><span aria-hidden="true">&larr;</span>Next</a></li>
-    <li class="next"><a href="#">Prev<span aria-hidden="true">&rarr;</span></a></li>
-  </ul>
-</div> 
-</nav>
-       </div>
-    </div>
-</body>
-</html>
-
-
-
-<!-- <!-- 답변 내용 출력
 <div>
-<tr>
-<th  width="1400px" style="background-color : #F2F2F1; padding : 10px; text-align: center;">
+<div>
+
+</div><tr>
+<th width="1400px" style="background-color : #F2F2F2; padding : 10px; text-align: center;">
 	<h5>답변내용</h5>
-	<p>코로나 방역작업 때문에 배송이 지연되고 있습니다. 내일 중으로 배송될 예정입니다.</p>
+	<c:set var="replyCheck" value="${dto.reply}" />
+	<c:if test="${replyCheck eq 'N'}">
+		<p>답변 대기 중 입니다.</p>
+	</c:if>
+	<c:if test="${replyCheck eq 'Y'}">
+		<p>${ dto.answerContents }</p>
+	</c:if>
 </th>
 </tr>
+</c:forEach>
+</table>
 </div>
- -->
+ 	   <tr style="background-color: white; color:black;">
+	        <td colspan="5">
+	        	<button type="button" class="btn btn-link"><a href="/adminQuestionList?listType=1"><b>미답변목록</b></a></button>
+	       			<button type="button" class="btn btn-link"><a href="/adminQuestionList?listType=2"><b>답변완료목록</b></a></button>
+	       				<button type="button" class="btn btn-link"><a href="/adminQuestionList?listType=3"><b>전체질문목록</b></a></button>
+	        </td>
+	    </tr>
+<%-- <nav aria-label="...">
+	  	<ul class="pagination">
+		    <li class="page-item disabled">
+		      	<span class="page-link">Previous</span>
+		    </li>
+		    <li class="page-item <%= page1_active %>">
+		    	<a class="page-link"  href="buyerQuestionList?page=1">1</a>
+		    </li>
+		    <li class="page-item <%= page2_active %>">
+		      	<a class="page-link" href="buyerQuestionList?page=2">2</a>
+		    </li>
+		    <li class="page-item <%= page3_active %>">
+		    	<a class="page-link" href="buyerQuestionList?page=3">3</a>
+		    </li>
+		    <li class="page-item">
+		      	<a class="page-link">Next</a>
+		    </li>
+	  	</ul>
+	</nav> --%>
+</body>
+</html>

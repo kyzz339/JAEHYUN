@@ -93,11 +93,11 @@ public class QuestionServiceImpl implements QuestionService {
 		int nResult = mapper.replyCheck(idx);
 		
 		if(nResult < 1) {
-			mapper.insertReply(idx, answerContents);
-			System.out.println("답변이 달려있지 않습니다.");
+			System.out.println("이미 답변이 달려있습니다.");
 			return nResult;
 		}else {
-			System.out.println("이미 답변이 달려있습니다.");
+			mapper.insertReply(idx, answerContents);
+			System.out.println("답변이 달려있지 않습니다.");
 			return nResult;
 		}
 	}
