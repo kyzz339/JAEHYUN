@@ -1,5 +1,7 @@
 package com.desert.demo.controller;
 
+import java.util.ArrayList;
+
 import javax.servlet.http.HttpServletRequest;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -9,13 +11,20 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
+import com.desert.demo.dto.DTOGoods;
 import com.desert.demo.loginService.InsertBuyerMember;
+import com.desert.demo.service.ServiceGoods;
 
 @Controller
 public class LoginController {
 
 	@Autowired
 	InsertBuyerMember ibmember;
+	
+	@Autowired
+	DTOGoods goods;
+	@Autowired
+	ServiceGoods serviceGoods;
 	
 	    @GetMapping("/")
 	    public String root() throws Exception {
@@ -95,5 +104,47 @@ public class LoginController {
 	        redirect.addAttribute("contentPage", "myPage/buyerPage/myPageModify.jsp");
 	        return "redirect:mainForm";
 	    }
+	    
+	    @GetMapping("/goodsRegForm")
+		public String OpengoodsRegForm(RedirectAttributes redirect) {
+			redirect.addAttribute("contentPage", "myPage/adminPage/goodsRegForm.jsp");
+			return "redirect:mainForm";
+	}
+
+	@GetMapping("/goodsRegList")
+	public String OpenGoodsList(RedirectAttributes redirect,HttpServletRequest req){
+		ArrayList<DTOGoods> list=serviceGoods.goodsList();
+		System.out.println("arraylist"+list);
+		req.getSession().setAttribute("list",list);
+
+		redirect.addAttribute("contentPage","myPage/adminPage/goodsRegList.jsp");
+			return "redirect:mainForm";
+	    }
+
+	    @GetMapping("/productDetail")
+	public String productDetail(HttpServletRequest req,RedirectAttributes redirect){
+	    	int idx=Integer.parseInt(req.getParameter("idx"));
+	    	goods=serviceGoods.getInfoGoods(idx);
+	    	req.getSession().setAttribute("goods",goods);
+	    	redirect.addAttribute("contentPage","main/productDetail.jsp");
+	    	return "redirect:mainForm";
+		}
+
+		@GetMapping("modifyGoods")
+	public String openModify(HttpServletRequest req,RedirectAttributes redirect){
+	    	int idx=Integer.parseInt(req.getParameter("idx"));
+	    	goods=serviceGoods.getInfoGoods(idx);
+	    	req.getSession().setAttribute("goods",goods);
+			redirect.addAttribute("contentPage","myPage/adminPage/goodsModifyForm.jsp");
+			return "redirect:mainForm";
+		}
+
+		@GetMapping("/productList")
+	public String productList(HttpServletRequest req,RedirectAttributes redirect){
+			ArrayList<DTOGoods> list=serviceGoods.goodsList();
+			req.getSession().setAttribute("list",list);
+			redirect.addAttribute("contentPage","main/productList.jsp");
+			return "redirect:mainForm";
+		}
 	    
 }

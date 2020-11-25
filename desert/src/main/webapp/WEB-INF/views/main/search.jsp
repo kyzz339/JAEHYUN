@@ -1,7 +1,15 @@
+<%@ page import="com.desert.demo.dto.DTOGoods" %>
+<%@ page import="java.util.ArrayList" %>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
-	pageEncoding="UTF-8"%>
+         pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html lang="en">
+<%ArrayList<DTOGoods> list= (ArrayList<DTOGoods>)session.getAttribute("list");
+for(DTOGoods goods:list){
+    System.out.println(goods.getIdx());
+}
+
+%>
 
 <head>
     <meta charset="UTF-8"/>
@@ -24,10 +32,10 @@
     <p style="color: #7a787a">당신의 오아시스를 찾아보세요</p>
 </div>
 <hr style="border: solid 2px #F88687;width: 70%;background-color: #F88687">
-<form style="margin: 30px">
+<form action="/search" method="post" style="margin: 30px">
     <div class="form-group"style="margin: 20px">
         <div style="display: inline-block ;width: 18%;text-align: right"><label for="exampleInputPassword1">검색조건</label></div>
-        <div style="display: inline-block ;width: 60%;margin: 10px"><input type="search" class="form-control" style="width: 100%" id="exampleInputPassword1"></div>
+        <div style="display: inline-block ;width: 60%;margin: 10px"><input name="search" type="search" class="form-control" style="width: 100%" id="exampleInputPassword1"></div>
         <div style="display: inline-block ;width: 18%"><button type="submit" class="search">검색하기</button></div>
     </div>
 
@@ -36,109 +44,21 @@
 <p style="padding-left: 15%">총 231건이 검색되었습니다</p>
 <hr style="border: solid 1px #c7c5c7;width: 70%;background-color: #c7c5c7;margin-bottom: 20px">
 </div>
-<div style="width: 70%;margin: auto;margin-bottom: 60px">
-<div class="card-deck" style="margin: 20px">
-    <div class="card">
-        <img src="http://placehold.it/120x150" class="card-img-top" alt="...">
-        <div class="card-body">
-            <h5 class="card-title">현석이네 공갈빵</h5>
-            <p class="card-text">둘이 먹다가 재현이가 죽어도 몰라 띠용</p>
-        </div>
-        <div class="card-footer">
-            <small class="text-muted">9999원</small>
-        </div>
-    </div>
-    <div class="card">
-        <img src="http://placehold.it/120x150" class="card-img-top" alt="...">
-        <div class="card-body">
-            <h5 class="card-title">Card title</h5>
-            <p class="card-text">내용 넣어주세용.</p>
-        </div>
-        <div class="card-footer">
-            <small class="text-muted">Last updated 3 mins ago</small>
-        </div>
-    </div>
-    <div class="card">
-        <img src="http://placehold.it/120x150" class="card-img-top" alt="...">
-        <div class="card-body">
-            <h5 class="card-title">Card title</h5>
-            <p class="card-text">내용 넣어주세용</p>
-        </div>
-        <div class="card-footer">
-            <small class="text-muted">Last updated 3 mins ago</small>
-        </div>
-    </div>
-</div>
-</div>
 
-<div style="width: 70%;margin:auto;margin-bottom: 60px">
-    <div class="card-deck" style="margin: 20px">
-        <div class="card">
-            <img src="http://placehold.it/120x150" class="card-img-top" alt="...">
-            <div class="card-body">
-                <h5 class="card-title">현석이네 공갈빵</h5>
-                <p class="card-text">둘이 먹다가 재현이가 죽어도 몰라 띠용</p>
-            </div>
-            <div class="card-footer">
-                <small class="text-muted">9999원</small>
-            </div>
+<div style="width: 70%;margin-bottom: 60px;margin: 0 auto;text-align: center"class="box">
+<%--    <c:forEach var="list" items="${list}">--%>
+    <% for(DTOGoods goods:list){ %>
+    <span class="card" style="width: 25%;display: inline-block;margin: 30px;text-align: center">
+        <a href="productDetail?idx=<%goods.getIdx();%>"><img src="<%goods.getImgS();%>>" style="width: 300px;height: 350px ;margin-top: 20px" class="card-img-top"></a>
+        <div class="card-body"style="width: 300px;margin: 0 auto">
+            <h5 class="card-title"><%goods.getName();%></h5>
+            <p class="card-text"><%goods.getContents();%></p>
         </div>
-        <div class="card">
-            <img src="http://placehold.it/120x150" class="card-img-top" alt="...">
-            <div class="card-body">
-                <h5 class="card-title">Card title</h5>
-                <p class="card-text">내용 넣어주세용</p>
-            </div>
-            <div class="card-footer">
-                <small class="text-muted">Last updated 3 mins ago</small>
-            </div>
+        <div class="card-footer"style="width: 300px;margin: 0 auto">
+            <small class="text-muted"><%goods.getPrice();%>>원</small>
         </div>
-        <div class="card">
-            <img src="http://placehold.it/120x150" class="card-img-top" alt="...">
-            <div class="card-body">
-                <h5 class="card-title">Card title</h5>
-                <p class="card-text">내용 넣어주세용 </p>
-            </div>
-            <div class="card-footer">
-                <small class="text-muted">Last updated 3 mins ago</small>
-            </div>
-        </div>
-    </div>
-</div>
-
-<div style="width: 70%;margin: auto;margin-bottom: 60px">
-    <div class="card-deck" style="margin: 20px">
-        <div class="card">
-            <img src="http://placehold.it/120x150" class="card-img-top" alt="...">
-            <div class="card-body">
-                <h5 class="card-title">현석이네 공갈빵</h5>
-                <p class="card-text">둘이 먹다가 재현이가 죽어도 몰라 띠용</p>
-            </div>
-            <div class="card-footer">
-                <small class="text-muted">9999원</small>
-            </div>
-        </div>
-        <div class="card">
-            <img src="http://placehold.it/120x150" class="card-img-top" alt="...">
-            <div class="card-body">
-                <h5 class="card-title">Card title</h5>
-                <p class="card-text">내용 넣어 주세용.</p>
-            </div>
-            <div class="card-footer">
-                <small class="text-muted">Last updated 3 mins ago</small>
-            </div>
-        </div>
-        <div class="card">
-            <img src="http://placehold.it/120x150" class="card-img-top" alt="...">
-            <div class="card-body">
-                <h5 class="card-title">Card title</h5>
-                <p class="card-text">내용 넣어주세용.</p>
-            </div>
-            <div class="card-footer">
-                <small class="text-muted">Last updated 3 mins ago</small>
-            </div>
-        </div>
-    </div>
+    </span>
+<%--    </c:forEach>--%><%}%>
 </div>
 
 

@@ -24,44 +24,34 @@ form {
 
 </head>
 <body>
-    <h3 style="text-align: center;">상품 등록</h3>
-    <form>
+    <h3 style="text-align: center;margin: 30px">상품 등록</h3>
+    <form style="margin: 20px" action="/goodsRegForm" method="post" enctype="multipart/form-data">
         <table > <!-- 전체 윤곽-->
             <tr>
                 <tr>
                     <td>
-                        <table border="1" height="410">
+                        <table class="select_img" border="1" height="410">
                             <tr>
                                 <td>
-
+                                    <img src=""/>
                                 </td>
                             </tr>
                         </table>
                     </td>
                     <td>
                         <table height="370"> <!-- 왼쪽 테이블 윤곽 -->
-                            <tr>
-                                <td>
-                                    <div class="input-group mb-1" >
-                                        <div class="input-group-prepend" >
-                                            <span class="input-group-text" id="inputGroup-sizing-default" style="width: 100px; height: auto;">판매자</span>
-                                        </div>
-                                        <input type="text" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default" placeholder="로그인된 아이디">
-                                    </div>
-                                </td>
-                            </tr>   
                             <div class="input-group mb-1" >
                                 <div class="input-group-prepend">
                                     <label class="input-group-text" for="inputGroupSelect01">카테고리</label>
                                 </div>
-                            <select class="custom-select" id="inputGroupSelect01"style="width: 50px; height: auto;">
+                            <select class="custom-select" name="category" id="inputGroupSelect01"style="width: 50px; height: auto;">
                                 <option selected>선택</option>
-                                <option value="1">빵(Bread)</option>
-                                <option value="2">쿠키(Cookie)</option>
-                                <option value="3">마카롱(Macaroon)</option>
-                                <option value="3">케이크(Cake)</option>
-                                <option value="3">마실것(Drink)</option>
-                                <option value="3">기타(ECT)</option>
+                                <option value="bread">빵(Bread)</option>
+                                <option value="cookie">쿠키(Cookie)</option>
+                                <option value="macaroon">마카롱(Macaroon)</option>
+                                <option value="cake">케이크(Cake)</option>
+                                <option value="drink">마실것(Drink)</option>
+                                <option value="etc">기타(ECT)</option>
                             </select>
                             </div>
                     <tr>
@@ -70,7 +60,7 @@ form {
                                 <div class="input-group-prepend">
                                 <span class="input-group-text" id="inputGroup-sizing-default">상품명</span>
                                 </div>
-                                <input type="text" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default">
+                                <input type="text" name="name" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default">
                             </div>
                         </td>
                     </tr>
@@ -80,37 +70,28 @@ form {
                                 <div class="input-group-prepend">
                                 <span class="input-group-text" id="inputGroup-sizing-default">판매가격</span>
                                 </div>
-                                <input type="text" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default"placeholder="숫자만입력">
+                                <input type="text" name="price" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default"placeholder="숫자만입력">
                             </div>
                         </td>
                     </tr>
-                    <tr>
-                        <td>
-                            <div class="input-group mb-1">
-                                <div class="input-group-prepend">
-                                <span class="input-group-text" id="inputGroup-sizing-default">판매단위</span>
-                                </div>
-                                <input type="text" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default">
-                            </div>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>
-                            <div class="input-group mb-1">
-                                <div class="input-group-prepend">
-                                <span class="input-group-text" id="inputGroup-sizing-default">중량/용량</span>
-                                </div>
-                                <input type="text" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default" >
-                            </div>
-                        </td>
-                    </tr>
+<%--                    <tr>--%>
+<%--                        <td>--%>
+<%--&lt;%&ndash;                            <div class="input-group mb-1">&ndash;%&gt;--%>
+<%--&lt;%&ndash;                                <div class="input-group-prepend">&ndash;%&gt;--%>
+<%--&lt;%&ndash;                                <span class="input-group-text" nameid="inputGroup-sizing-default">판매단위</span>&ndash;%&gt;--%>
+<%--&lt;%&ndash;                                </div>&ndash;%&gt;--%>
+<%--&lt;%&ndash;                                <input type="text" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default">&ndash;%&gt;--%>
+<%--&lt;%&ndash;                            </div>&ndash;%&gt;--%>
+<%--                        </td>--%>
+<%--                    </tr>--%>
+<%--                    --%>
                     <tr>
                         <td>
                             <div class="input-group mb-1">
                                 <div class="input-group-prepend">
                                 <span class="input-group-text">제품설명</span>
                                 </div>
-                                <textarea class="form-control" aria-label="width textarea"></textarea>
+                                <textarea name="contents" class="form-control" aria-label="width textarea"></textarea>
                             </div>
                         </td>
                     </tr>
@@ -120,12 +101,28 @@ form {
                                 <div class="input-group-prepend">
                                     <span class="input-group-text" id="inputGroupFileAddon01">대표이미지</span>
                                 </div>
+
                                 <div class="custom-file">
-                                    <input type="file" class="custom-file-input" id="inputGroupFile01" aria-describedby="inputGroupFileAddon01">
+                                    <input type="file" name="file" class="custom-file-input" id="file" aria-describedby="inputGroupFileAddon01">
                                     <label class="custom-file-label" for="inputGroupFile01"></label>
                                 </div>
                             </div>
-                    </td>
+                            <%=request.getRealPath("/")%>
+                            <script>
+                                $("#file").change(function(){
+                                    if(this.files&&this.files[0]){
+                                        var reader=new FileReader;
+                                        reader.onload=function (data){
+                                            $(".select_img img").attr("src",data.target.result).width(400);
+                                        }
+                                        reader.readAsDataURL(this.files[0]);
+                                    }
+                                });
+                            </script>
+
+
+
+                        </td>
                     </tr>
                     <tr>
                         <td>
@@ -147,8 +144,10 @@ form {
                 </tr>
             </tr>
         </table>
-        <button type="button" class="btn btn-outline-secondary" onclick="location.href= 'sellerRegList' ">등록</button>
-        <button type="button" class="btn btn-outline-secondary">취소</button>
+        <div style="margin: 30px">
+        <button type="submit" class="btn btn-outline-secondary" >등록</button>
+<%--        <button type="button" class="btn btn-outline-secondary" onclick="location.href= 'sellerRegList'>취소</button>--%>
+        </div>
     </form>
 </body>
 </html>

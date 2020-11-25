@@ -1,16 +1,21 @@
+<%@ page import="com.desert.demo.dto.DTOMember" %>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
-    pageEncoding="UTF-8"%>
+		 pageEncoding="UTF-8"%>
 
 <!DOCTYPE html>
 <html lang="ko">
+<head>
+<%DTOMember member= (DTOMember) session.getAttribute("session");%>
+
 </head>
 <body>
+
 <!--===============================================================================================-->
 <!-- 로그인 : 최현석 -->
 	<div class="limiter">
 		<div class="container-login100">
 			<div class="wrap-login100 p-t-5 p-b-5">
-				<form class="login100-form validate-form">
+				<form action="/newpw" method="post" class="login100-form validate-form">
 					<span class="login100-form-title p-b-30">
 						비밀번호 재설정
 					</span>
@@ -20,13 +25,14 @@
 					<br>
 					<br>
 					<div>
-					<h5 style="text-align: center;"> 고객님의 비밀번호를 재설정해주세요 ! </h5>
+
+						<h5 style="text-align: center;"> 고객님의 비밀번호를 재설정해주세요 ! </h5>
 					<br>
 					<br>
-					<h2> 고객님의 아이디 : EzenZzang</h2>
+					<h2> 고객님의 아이디 :<%=member.getId()%></h2>
 					<br>
 					<div class="wrap-input100 validate-input m-t-35 m-b-35" data-validate = "새 비밀번호를 입력하세요!">
-						<input class="input100" type="password" name="비밀번호">
+						<input class="input100" type="password" name="pw">
 						<span class="focus-input100" data-placeholder="새 비밀번호를 입력하세요."></span>
 					</div>
 					<br>

@@ -1,116 +1,32 @@
+<%@ page import="com.desert.demo.dto.DTOGoods" %>
+<%@ page import="java.util.ArrayList" %>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
-    pageEncoding="UTF-8"%>
+         pageEncoding="UTF-8"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+
+<%ArrayList<DTOGoods> list= (ArrayList<DTOGoods>) session.getAttribute("list");%>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8"/>   
      </head>
   <body>
-<div style="width: 70%;margin: auto;margin-bottom: 60px">
-<div class="card-deck" style="margin: 20px">
-    <div class="card">
-        <img src="http://placehold.it/120x150" class="card-img-top" alt="...">
-        <div class="card-body">
-            <h5 class="card-title">현석이네 공갈빵</h5>
-            <p class="card-text">둘이 먹다가 재현이가 죽어도 몰라 띠용</p>
-        </div>
-        <div class="card-footer">
-            <small class="text-muted">9999원</small>
-        </div>
-    </div>
-    <div class="card">
-        <img src="http://placehold.it/120x150" class="card-img-top" alt="...">
-        <div class="card-body">
-            <h5 class="card-title">Card title</h5>
-            <p class="card-text">내용 넣어주세용.</p>
-        </div>
-        <div class="card-footer">
-            <small class="text-muted">Last updated 3 mins ago</small>
-        </div>
-    </div>
-    <div class="card">
-        <img src="http://placehold.it/120x150" class="card-img-top" alt="...">
-        <div class="card-body">
-            <h5 class="card-title">Card title</h5>
-            <p class="card-text">내용 넣어주세용</p>
-        </div>
-        <div class="card-footer">
-            <small class="text-muted">Last updated 3 mins ago</small>
-        </div>
-    </div>
-</div>
-</div>
+      <div style="width: 70%;margin-bottom: 60px;margin: 0 auto;text-align: center"class="box">
+          <c:forEach var="list" items="${list}">
 
-<div style="width: 70%;margin:auto;margin-bottom: 60px">
-    <div class="card-deck" style="margin: 20px">
-        <div class="card">
-            <img src="http://placehold.it/120x150" class="card-img-top" alt="...">
-            <div class="card-body">
-                <h5 class="card-title">현석이네 공갈빵</h5>
-                <p class="card-text">둘이 먹다가 재현이가 죽어도 몰라 띠용</p>
-            </div>
-            <div class="card-footer">
-                <small class="text-muted">9999원</small>
-            </div>
+    <span class="card" style="width: 25%;display: inline-block;margin: 30px;text-align: center">
+        <a href="productDetail?idx=${list.idx}"><img src="${list.imgS}" style="width: 300px;height: 350px ;margin-top: 20px" class="card-img-top"></a>
+        <div class="card-body"style="width: 300px;margin: 0 auto">
+            <h5 class="card-title">${list.name}</h5>
+            <p class="card-text">${list.contents}</p>
         </div>
-        <div class="card">
-            <img src="http://placehold.it/120x150" class="card-img-top" alt="...">
-            <div class="card-body">
-                <h5 class="card-title">Card title</h5>
-                <p class="card-text">내용 넣어주세용</p>
-            </div>
-            <div class="card-footer">
-                <small class="text-muted">Last updated 3 mins ago</small>
-            </div>
+        <div class="card-footer"style="width: 300px;margin: 0 auto">
+            <small class="text-muted">${list.price}원</small>
         </div>
-        <div class="card">
-            <img src="http://placehold.it/120x150" class="card-img-top" alt="...">
-            <div class="card-body">
-                <h5 class="card-title">Card title</h5>
-                <p class="card-text">내용 넣어주세용 </p>
-            </div>
-            <div class="card-footer">
-                <small class="text-muted">Last updated 3 mins ago</small>
-            </div>
-        </div>
-    </div>
-</div>
-
-<div style="width: 70%;margin: auto;margin-bottom: 60px">
-    <div class="card-deck" style="margin: 20px">
-        <div class="card">
-            <img src="http://placehold.it/120x150" class="card-img-top" alt="...">
-            <div class="card-body">
-                <h5 class="card-title">현석이네 공갈빵</h5>
-                <p class="card-text">둘이 먹다가 재현이가 죽어도 몰라 띠용</p>
-            </div>
-            <div class="card-footer">
-                <small class="text-muted">9999원</small>
-            </div>
-        </div>
-        <div class="card">
-            <img src="http://placehold.it/120x150" class="card-img-top" alt="...">
-            <div class="card-body">
-                <h5 class="card-title">Card title</h5>
-                <p class="card-text">내용 넣어 주세용.</p>
-            </div>
-            <div class="card-footer">
-                <small class="text-muted">Last updated 3 mins ago</small>
-            </div>
-        </div>
-        <div class="card">
-            <img src="http://placehold.it/120x150" class="card-img-top" alt="...">
-            <div class="card-body">
-                <h5 class="card-title">Card title</h5>
-                <p class="card-text">내용 넣어주세용.</p>
-            </div>
-            <div class="card-footer">
-                <small class="text-muted">Last updated 3 mins ago</small>
-            </div>
-        </div>
-    </div>
-</div>
-
+    </span>
+          </c:forEach>
+      </div>
 
 <nav aria-label="Page navigation example" style="margin-bottom: 100px">
     <ul class="pagination justify-content-center">

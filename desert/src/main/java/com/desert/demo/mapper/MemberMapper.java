@@ -34,9 +34,12 @@ public interface MemberMapper {
 						@Param("email") String email);
 	 
 //   7.비밀번호 찾기
-	 public int findPW(@Param("pw") String pw,
-					 @Param("name") String name, 
-					 @Param("email") String email);
+//	 public int findPW(@Param("pw") String pw,
+//					 @Param("name") String name, 
+//					 @Param("email") String email);
+	 
+		public DTOMember findPW(DTOMember dtoMember);
+
 	 
 // 	 8. 비밀번호 재 확인 (마이페이지 수정 전)
 	 public int pwCheck(@Param("id") String id,
@@ -48,5 +51,7 @@ public interface MemberMapper {
 	 
 	 
 	 public int login(DTOMember dtoMember);
+
+		public int pwReset(@Param("id")String id,@Param("pw") String pw);
 
 }

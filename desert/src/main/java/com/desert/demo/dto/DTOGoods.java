@@ -15,6 +15,6 @@ public class DTOGoods {
 	private String contents; 
 	private LocalDate regdate; 
 	private int hit;
-	private String imgName;
-	private String imgUrl;
+	private String img;
+	private String imgS;
 }
